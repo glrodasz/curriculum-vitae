@@ -6,8 +6,8 @@ const Container = ({ children }) => {
         .container {
           max-width: 800px;
           width: 100%;
-          padding: 0 30px;
-		  margin: 0 auto;
+          padding: 0 20px;
+          margin: 0 auto;
         }
       `}</style>
     </>

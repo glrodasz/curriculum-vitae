@@ -1,12 +1,14 @@
-import React from "react";
+import PropTypes from 'prop-types'
+import classNames from "classnames";
 
 const Heading = ({ children, size, color, isCentered, isMarginless }) => {
   return (
     <>
       <h1
-        className={`heading size-${size} color-${color} ${
-          isCentered ? "is-centered" : ""
-        } ${isMarginless ? "is-marginless" : ""}`}
+        className={classNames("heading", `size-${size} color-${color}`, {
+          "is-centerd": isCentered,
+          "is-marginless": isMarginless,
+        })}
       >
         {children}
       </h1>
@@ -65,6 +67,11 @@ const Heading = ({ children, size, color, isCentered, isMarginless }) => {
     </>
   );
 };
+
+Heading.proptTypes = {
+  size: PropTypes.oneOf(['xxs', 'xs', 'md', 'lg']),
+  color: PropTypes.oneOf(['primary', 'secondary'])
+}
 
 Heading.defaultProps = {
   size: "lg",

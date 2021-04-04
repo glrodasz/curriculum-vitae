@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "classnames": "^2.3.1",
     "minireset.css": "^0.0.7",
     "next": "^10.0.7",
     "react": "^17.0.1",

@@ -20,13 +20,18 @@ const Hero = () => {
           Developer Expert in web technologies, community organizer and online
           teacher.
         </Paragraph>
-        <img className="photo" src="/images/guillermorodas.png" />
       </div>
+      <img className="photo" src="/images/guillermorodas.png" />
       <style jsx>{`
+        header {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          min-height: 730px;
+        }
+
         .hero {
           padding: 21px 27px 0;z
-          height: 100vh;
-          min-height: 730px;
           position: relative;
         }
 
@@ -37,9 +42,11 @@ const Hero = () => {
         }
 
         .photo {
-          position: absolute;
+          position: relative;
           bottom: 0;
           right: 0;
+          width: 100%;
+          max-width: 800px;
         }
       `}</style>
     </header>

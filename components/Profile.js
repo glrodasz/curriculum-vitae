@@ -4,6 +4,7 @@ import Paragraph from "./Paragraph.js";
 import Container from "./Container";
 import Icon from "./Icon";
 import Carousel from "./Carousel";
+import IconObject from "./IconObject";
 
 const Profile = () => {
   return (
@@ -16,45 +17,14 @@ const Profile = () => {
           <strong>Personal</strong> profile
         </Heading>
 
-		{/* TODO: Move to IconHeading component */}
-        <Heading size="xs">
-          <Icon size="md" name="language" />{" "}
-          <span style={{ display: "inline-block", marginTop: 3 }}>
-            Language
-          </span>
-        </Heading>
-
-        {/* TODO: Move these below to a Language component  */}
-        <div style={{ marginTop: 10, display: "flex", fontSize: 15 }}>
-          <span style={{ lineHeight: 1 }}>🇪🇸</span>
-          <div style={{ marginLeft: 8 }}>
-            <Heading size="xxs" color="secondary" isMarginless>
-              Spanish
-            </Heading>
-            <Paragraph color="secondary" isMarginless>
-              Native
-            </Paragraph>
-          </div>
-        </div>
-
-        <div
-          style={{
-            marginTop: 10,
-            marginBottom: 20,
-            display: "flex",
-            fontSize: 15,
-          }}
-        >
-          <span style={{ lineHeight: 1 }}>🇬🇧</span>
-          <div style={{ marginLeft: 8 }}>
-            <Heading size="xxs" color="secondary" isMarginless>
-              English
-            </Heading>
-            <Paragraph color="secondary" isMarginless>
-              Profesional working proficiency
-            </Paragraph>
-          </div>
-        </div>
+        <IconObject icon="language" title="Language" />
+        <IconObject flag="🇪🇸" title="Spanish" type="secondary" text="Native" />
+        <IconObject
+          flag="🇬🇧"
+          title="Spanish"
+          type="secondary"
+          text="Profesional working proficiency"
+        />
 
         <Paragraph>
           Guillermo Rodas is a Full-stack JavaScript Engineer from Colombia,
