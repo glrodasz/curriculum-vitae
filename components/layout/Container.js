@@ -9,6 +9,12 @@ const Container = ({ children }) => {
           padding: 0 20px;
           margin: 0 auto;
         }
+
+        @media (min-width: 1440px) {
+          .container {
+            max-width: 1230px;
+          }
+        }
       `}</style>
     </>
   );

@@ -1,4 +1,4 @@
-import Paragraph from "./Paragraph";
+import Paragraph from "../atoms/Paragraph";
 
 const Country = ({ flag, description }) => {
   return (

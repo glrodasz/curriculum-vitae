@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import Heading from "./Heading";
-import Icon from "./Icon";
+import Heading from "../atoms/Heading";
+import Icon from "../atoms/Icon";
 
 const Carousel = ({ items }) => {
   const [active, setActive] = useState(0);

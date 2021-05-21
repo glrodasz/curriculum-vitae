@@ -1,5 +1,5 @@
-import Country from "./Country";
-import Icon from "./Icon";
+import Country from "../molecules/Country";
+import Icon from "../atoms/Icon";
 
 const Relocation = ({}) => {
   return (

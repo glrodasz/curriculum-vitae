@@ -1,10 +1,9 @@
 import Relocation from "./Relocation";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph.js";
-import Container from "./Container";
-import Icon from "./Icon";
-import Carousel from "./Carousel";
-import IconObject from "./IconObject";
+import Heading from "../atoms/Heading";
+import Paragraph from "../atoms/Paragraph.js";
+import Container from "../layout/Container";
+import Carousel from "../molecules/Carousel";
+import IconObject from "../molecules/IconObject";
 
 const Profile = () => {
   return (
@@ -18,13 +17,20 @@ const Profile = () => {
         </Heading>
 
         <IconObject icon="language" title="Language" />
-        <IconObject flag="🇪🇸" title="Spanish" type="secondary" text="Native" />
-        <IconObject
-          flag="🇬🇧"
-          title="Spanish"
-          type="secondary"
-          text="Profesional working proficiency"
-        />
+        <div className="languages">
+          <IconObject
+            flag="🇪🇸"
+            title="Spanish"
+            type="secondary"
+            text="Native"
+          />
+          <IconObject
+            flag="🇬🇧"
+            title="English"
+            type="secondary"
+            text="Profesional working proficiency"
+          />
+        </div>
 
         <Paragraph>
           Guillermo Rodas is a Full-stack JavaScript Engineer from Colombia,
@@ -73,6 +79,18 @@ const Profile = () => {
 
         .relocation {
           margin-bottom: 50px;
+        }
+
+        .languages {
+          display: flex;
+          flex-direction: column;
+        }
+
+        @media (min-width: 1140px) {
+          .languages {
+            flex-direction: row;
+            grid-gap: 20px;
+          }
         }
       `}</style>
     </Container>

@@ -1,8 +1,7 @@
 import Head from "next/head";
 
-import Hero from "../components/Hero";
-import Profile from "../components/Profile";
-import Container from "../components/Container";
+import Hero from "../components/organisms/Hero";
+import Profile from "../components/organisms/Profile";
 
 const index = () => {
   return (

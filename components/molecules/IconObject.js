@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import Icon from "./Icon";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
+import Icon from "../atoms/Icon";
+import Heading from "../atoms/Heading";
+import Paragraph from "../atoms/Paragraph";
 
 const getHeadingSize = (type) => (type === "secondary" ? "xxs" : "xs");
 
