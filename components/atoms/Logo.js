@@ -7,7 +7,7 @@ const Logo = () => {
       <style jsx>{`
         .logo {
           width: 100%;
-		  max-width: 293px;
+          max-width: 293px;
         }
       `}</style>
     </>

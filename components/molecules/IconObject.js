@@ -29,12 +29,12 @@ const IconObject = ({ icon, flag, title, type, text, footer }) => {
       <style jsx>{`
         .icon-object {
           display: flex;
-		  margin-bottom: 15px;
-		  align-items: ${text ? 'flex-start': 'center'};
+          margin-bottom: 15px;
+          align-items: ${text ? "flex-start" : "center"};
         }
 
         .content {
-          margin-left: ${text ? '10px': '5px'};
+          margin-left: ${text ? "10px" : "5px"};
         }
       `}</style>
     </>

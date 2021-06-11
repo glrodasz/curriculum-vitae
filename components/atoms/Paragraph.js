@@ -1,10 +1,14 @@
+import classNames from "classnames";
+
 const Paragraph = ({ children, size, color, isMarginless }) => {
   return (
     <>
       <p
-        className={`paragraph size-${size} color-${color} ${
-          isMarginless ? "is-marginless" : ""
-        }`}
+        className={classNames("paragraph", {
+          [`size-${size}`]: size,
+          [`color-${color}`]: color,
+          "is-marginless": isMarginless,
+        })}
       >
         {children}
       </p>
@@ -42,7 +46,7 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
 
 Paragraph.defaultProps = {
   size: "md",
-  color: 'primary'
+  color: "primary",
 };
 
 export default Paragraph;

@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
 import classNames from "classnames";
 
-const Heading = ({ children, size, color, isCentered, isMarginless }) => {
+const Heading = ({ children, size, color, isCentered, isMarginless, isComfortable }) => {
   return (
     <>
       <h1
         className={classNames("heading", `size-${size} color-${color}`, {
-          "is-centerd": isCentered,
+          "is-centered": isCentered,
           "is-marginless": isMarginless,
+          "is-comfortable": isComfortable
         })}
       >
         {children}
@@ -62,6 +63,11 @@ const Heading = ({ children, size, color, isCentered, isMarginless }) => {
 
         .is-marginless {
           margin-bottom: 0;
+        }
+
+        .is-comfortable {
+          margin-left: 10px;
+          margin-right: 10px;
         }
       `}</style>
     </>
