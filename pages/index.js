@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import Hero from "../components/organisms/Hero";
 import Profile from "../components/organisms/Profile";
+import Career from "../components/organisms/Career";
 
 const index = () => {
   return (
@@ -15,6 +16,7 @@ const index = () => {
       </Head>
       <Hero />
       <Profile />
+      <Career />
     </>
   );
 };

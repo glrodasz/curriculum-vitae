@@ -30,8 +30,9 @@ const Card = ({ title, subtitle, items, isInverted }) => {
       <style jsx>{`
         .card {
           background: var(--golden-yellow);
-          padding: 30px 70px;
+          padding: 30px 60px;
           margin: 15px 0;
+          width: 100%;
         }
 
         .is-inverted {
@@ -48,6 +49,12 @@ const Card = ({ title, subtitle, items, isInverted }) => {
 
         .is-inverted :global(.paragraph) {
           color: var(--white);
+        }
+
+        @media (min-width: 1440px) {
+          .card {
+            max-width: 270px;
+          }
         }
       `}</style>
     </>
