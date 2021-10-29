@@ -7,11 +7,12 @@ const sizes = {
   sm: 12,
 };
 
-const Icon = ({ size, name, isRounded, isClickable, onClick }) => {
+const Icon = ({ size, name, isRounded, isClickable, hasBackground, onClick }) => {
   return (
     <div className={classNames('icon', {
       "is-rounded": isRounded,
-      "is-clickable": isClickable
+      "is-clickable": isClickable,
+      "has-background": hasBackground
     })} onClick={onClick}>
       <img
         src={`/icons/${name}.svg`}
@@ -34,6 +35,13 @@ const Icon = ({ size, name, isRounded, isClickable, onClick }) => {
         .is-clickable {
           cursor: pointer;
           user-select: none;
+        }
+
+        .has-background {
+          padding: 10px;
+          background: var(--golden-yellow);
+          margin: 10px;
+          border-radius: 4px;
         }
       `}</style>
     </div>

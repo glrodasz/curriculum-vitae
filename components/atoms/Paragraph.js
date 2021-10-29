@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-const Paragraph = ({ children, size, color, isMarginless }) => {
+const Paragraph = ({ children, size, color, isMarginless, isInverted }) => {
   return (
     <>
       <p
@@ -8,6 +8,7 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
           [`size-${size}`]: size,
           [`color-${color}`]: color,
           "is-marginless": isMarginless,
+          "is-inverted": isInverted,
         })}
       >
         {children}
@@ -38,6 +39,10 @@ const Paragraph = ({ children, size, color, isMarginless }) => {
 
         .is-marginless {
           margin-bottom: 0;
+        }
+
+        .is-inverted {
+          color: var(--white);
         }
       `}</style>
     </>

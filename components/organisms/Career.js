@@ -13,22 +13,22 @@ const Career = () => {
         items={[
           {
             title: "Currently",
-			subtitle: "Klarna",
+            subtitle: "Klarna",
             content: null,
           },
           {
             title: "2016",
-			subtitle: "Auth0",
+            subtitle: "Auth0",
             content: null,
           },
           {
             title: "2015",
-			subtitle: "Huge",
+            subtitle: "Huge",
             content: null,
           },
           {
             title: "2012",
-			subtitle: "Komet Sales",
+            subtitle: "Komet Sales",
             content: null,
           },
         ]}

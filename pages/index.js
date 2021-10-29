@@ -3,6 +3,7 @@ import Head from "next/head";
 import Hero from "../components/organisms/Hero";
 import Profile from "../components/organisms/Profile";
 import Career from "../components/organisms/Career";
+import Footer from "../components/organisms/Footer";
 
 const index = () => {
   return (
@@ -17,6 +18,7 @@ const index = () => {
       <Hero />
       <Profile />
       <Career />
+      <Footer />
     </>
   );
 };
