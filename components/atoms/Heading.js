@@ -17,7 +17,7 @@ const Heading = ({
           "is-centered": isCentered,
           "is-marginless": isMarginless,
           "is-comfortable": isComfortable,
-          "is-inverted": isInverted
+          "is-inverted": isInverted,
         })}
       >
         {children}
@@ -36,7 +36,6 @@ const Heading = ({
 
         .heading :global(strong) {
           color: var(--golden-yellow);
-          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 0 rgba(255, 255, 255);
         }
 
         .color-primary {
@@ -82,6 +81,13 @@ const Heading = ({
         .is-comfortable {
           margin-left: 10px;
           margin-right: 10px;
+        }
+
+        @media (min-width: 1140px) {
+          .heading :global(strong.shadow) {
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2),
+              -1px -1px 0 rgba(255, 255, 255);
+          }
         }
       `}</style>
     </>

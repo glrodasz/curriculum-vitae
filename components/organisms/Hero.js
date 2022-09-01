@@ -18,7 +18,7 @@ const Hero = () => {
             <Heading size="sm">Hello,</Heading>
             <div className="fullname">
             <Heading>
-              I'm <strong>Guillermo</strong>
+              I'm <strong className="shadow">Guillermo</strong>
             </Heading>
             <Heading>Rodas</Heading>
             </div>
@@ -27,16 +27,18 @@ const Hero = () => {
 Organizer of CSS Community Dev, and CSS Conf Colombia.
 Google Developer Expert in Web Tech, and affiliated Twitch Streamer.
             </Paragraph>
+            <div className="relocation">
+        <Relocation />
+      </div>
           </div>
         </Container>
         <img className="photo" src="/images/guillermo-rodas.png" />
       </header>
-      <div className="relocation">
-        <Relocation />
-      </div>
       <style jsx>{`
         .container {
+          position: relative;
           min-height: 100vh;
+          margin-bottom: 130px;
         }
 
         .hero {
@@ -60,7 +62,10 @@ Google Developer Expert in Web Tech, and affiliated Twitch Streamer.
         }
 
         .relocation {
-          margin-top: 50px;
+          position: absolute;
+          bottom: -130px;
+          left: 0;
+          right: 0;
         }
 
         @media (min-width: 1140px) {
@@ -94,6 +99,11 @@ Google Developer Expert in Web Tech, and affiliated Twitch Streamer.
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+          }
+
+          .relocation {
+            position: relative;
+            bottom: 0;
           }
         }
       `}</style>
