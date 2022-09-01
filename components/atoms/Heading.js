@@ -36,6 +36,7 @@ const Heading = ({
 
         .heading :global(strong) {
           color: var(--golden-yellow);
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), -1px -1px 0 rgba(255, 255, 255);
         }
 
         .color-primary {

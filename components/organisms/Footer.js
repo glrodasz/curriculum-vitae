@@ -69,12 +69,12 @@ const Footer = ({ children }) => {
         .item {
           display: flex;
           align-items: center;
-		  margin: 10px 0;
+          margin: 10px 0;
         }
 
-		.item > :global(div) {
-			margin-right: 10px;
-		}
+        .item > :global(div) {
+          margin-right: 10px;
+        }
 
         .social-networks {
           display: flex;

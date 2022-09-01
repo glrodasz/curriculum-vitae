@@ -40,9 +40,6 @@ const Profile = () => {
   return (
     <Container>
       <div className="profile">
-        <div className="relocation">
-          <Relocation />
-        </div>
         <Heading size="md" isCentered>
           <strong>Personal</strong> profile
         </Heading>
@@ -121,10 +118,6 @@ const Profile = () => {
       <style jsx>{`
         .profile {
           padding: 50px 0 40px;
-        }
-
-        .relocation {
-          margin-bottom: 50px;
         }
 
         .languages {
