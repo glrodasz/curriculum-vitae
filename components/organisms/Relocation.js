@@ -6,7 +6,7 @@ const Relocation = ({}) => {
     <>
       <div className="relocation">
         <Country flag="colombia" description="From Colombia" />
-        <div className="icon">
+        <div className="connector-icon">
           <Icon size="lg" name="airplane" />
         </div>
         <div className="divider" />
@@ -18,11 +18,11 @@ const Relocation = ({}) => {
           display: flex;
           justify-content: space-around;
           align-items: center;
-          width: 300px;
           margin: 0 auto;
+          width: 350px;
         }
 
-        .icon {
+        .connector-icon {
           position: relative;
           top: -20px;
           background: var(--white);
@@ -35,7 +35,7 @@ const Relocation = ({}) => {
           z-index: -1;
           height: 0;
           border-top: 1px dashed var(--storm-dust);
-          width: 200px;
+          width: 50%;
         }
       `}</style>
     </>

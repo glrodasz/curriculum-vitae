@@ -29,6 +29,10 @@ const Paragraph = ({ children, size, color, isMarginless, isInverted }) => {
           color: var(--bunker);
         }
 
+        .size-lg {
+          font-size: 1.8rem;
+        }
+
         .size-md {
           font-size: 1.6rem;
         }

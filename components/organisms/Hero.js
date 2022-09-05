@@ -11,30 +11,28 @@ const Hero = () => {
       <header>
         <PageContainer>
           <div className="container">
-          <div className="wrapper">
-            <div className="text">
-              <div className="logo">
-                <Logo />
-              </div>
-              <Heading size="sm">Hello,</Heading>
-              <div className="fullname">
-                <Heading>
-                  I'm <strong className="shadow">Guillermo</strong>
-                </Heading>
-                <Heading>Rodas</Heading>
-              </div>
-              <Paragraph>
-                I'm Full-stack JavaScript Developer from Colombia living in
-                Sweden. Organizer of CSS Community Dev, and CSS Conf Colombia.
-                Google Developer Expert in Web Tech, and affiliated Twitch
-                Streamer.
-              </Paragraph>
-              <div className="relocation">
-                <Relocation />
+            <div className="wrapper">
+              <div className="text">
+                <div className="logo">
+                  <Logo />
+                </div>
+                <Heading size="sm">Hello,</Heading>
+                <div className="fullname">
+                  <Heading>
+                    I'm <strong className="shadow">Guillermo</strong>
+                  </Heading>
+                  <Heading>Rodas</Heading>
+                </div>
+                <Paragraph size="lg">
+                  I'm Full-stack JavaScript Developer, and I help developers to improve their skills while creating
+                  quality products. 
+                </Paragraph>
+                <div className="relocation-container">
+                  <Relocation />
+                </div>
               </div>
             </div>
-          </div>
-          <img className="photo" src="/images/guillermo-rodas.png" />
+            <img className="photo" src="/images/guillermo-rodas.png" />
           </div>
         </PageContainer>
       </header>
@@ -61,7 +59,7 @@ const Hero = () => {
 
         .text {
           display: flex;
-          flex-direction: column; 
+          flex-direction: column;
         }
 
         .logo {
@@ -78,7 +76,7 @@ const Hero = () => {
           max-width: 800px;
         }
 
-        .relocation {
+        .relocation-container {
           position: absolute;
           bottom: calc(var(--relocation-height) * -1);
           left: 0;
@@ -111,7 +109,7 @@ const Hero = () => {
             max-height: 100%;
             object-fit: contain;
             align-self: flex-end;
-            min-width: 650px;
+            min-width: 700px;
           }
 
           .logo {
@@ -125,7 +123,7 @@ const Hero = () => {
             gap: 10px;
           }
 
-          .relocation {
+          .relocation-container {
             position: relative;
             bottom: 0;
           }
