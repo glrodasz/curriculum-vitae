@@ -1,11 +1,11 @@
 import React from "react";
-import Container from "../layout/Container";
+import PageContainer from "../layout/PageContainer";
 import Heading from "../atoms/Heading";
 import Carousel from "../molecules/Carousel";
 
 const Career = () => {
   return (
-    <Container>
+    <PageContainer>
       <Heading size="md" isCentered>
         <strong>Career</strong> experience
       </Heading>
@@ -33,7 +33,7 @@ const Career = () => {
           },
         ]}
       />
-    </Container>
+    </PageContainer>
   );
 };
 

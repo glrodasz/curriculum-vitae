@@ -1,7 +1,7 @@
 import Relocation from "./Relocation";
 import Heading from "../atoms/Heading";
 import Paragraph from "../atoms/Paragraph.js";
-import Container from "../layout/Container";
+import PageContainer from "../layout/PageContainer";
 import Carousel from "../molecules/Carousel";
 import IconObject from "../molecules/IconObject";
 import Card from "../molecules/Card";
@@ -38,7 +38,7 @@ const skills = [
 
 const Profile = () => {
   return (
-    <Container>
+    <PageContainer>
       <div className="profile">
         <Heading size="md" isCentered>
           <strong>Personal</strong> profile
@@ -142,7 +142,7 @@ const Profile = () => {
           }
         }
       `}</style>
-    </Container>
+    </PageContainer>
   );
 };
 

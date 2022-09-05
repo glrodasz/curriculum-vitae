@@ -9,5 +9,9 @@
 }
 
 html {
-  font-size: 10px;
+  font-size: 12px;
+}
+
+html, body, #__next {
+  height: 100%;
 }

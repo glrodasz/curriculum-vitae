@@ -1,56 +1,73 @@
 import React from "react";
-import Container from "../layout/Container";
+import PageContainer from "../layout/PageContainer";
 import Heading from "../atoms/Heading";
 import Logo from "../atoms/Logo";
 import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
-import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Hero = () => {
   return (
     <>
-      <header className="container">
-        <Container>
-          <div className="hero">
-            <div className="logo">
-              <Logo />
+      <header>
+        <PageContainer>
+          <div className="container">
+          <div className="wrapper">
+            <div className="text">
+              <div className="logo">
+                <Logo />
+              </div>
+              <Heading size="sm">Hello,</Heading>
+              <div className="fullname">
+                <Heading>
+                  I'm <strong className="shadow">Guillermo</strong>
+                </Heading>
+                <Heading>Rodas</Heading>
+              </div>
+              <Paragraph>
+                I'm Full-stack JavaScript Developer from Colombia living in
+                Sweden. Organizer of CSS Community Dev, and CSS Conf Colombia.
+                Google Developer Expert in Web Tech, and affiliated Twitch
+                Streamer.
+              </Paragraph>
+              <div className="relocation">
+                <Relocation />
+              </div>
             </div>
-            <Heading size="sm">Hello,</Heading>
-            <div className="fullname">
-            <Heading>
-              I'm <strong className="shadow">Guillermo</strong>
-            </Heading>
-            <Heading>Rodas</Heading>
-            </div>
-            <Paragraph>
-            I'm Full-stack JavaScript Developer from Colombia living in Sweden.
-Organizer of CSS Community Dev, and CSS Conf Colombia.
-Google Developer Expert in Web Tech, and affiliated Twitch Streamer.
-            </Paragraph>
-            <div className="relocation">
-        <Relocation />
-      </div>
           </div>
-        </Container>
-        <img className="photo" src="/images/guillermo-rodas.png" />
+          <img className="photo" src="/images/guillermo-rodas.png" />
+          </div>
+        </PageContainer>
       </header>
       <style jsx>{`
-        .container {
+        header {
+          --relocation-height: 130px;
           position: relative;
-          min-height: 100vh;
-          margin-bottom: 130px;
+          height: auto;
+          min-height: 600px;
+          margin-bottom: var(--relocation-height);
         }
 
-        .hero {
+        .container {
           display: flex;
           flex-direction: column;
-          padding: 21px 27px 0;
+          justify-content: space-between;
+          height: 100%;
+          align-items: center;
+        }
+
+        .wrapper {
+          width: 100%;
+        }
+
+        .text {
+          display: flex;
+          flex-direction: column; 
         }
 
         .logo {
           display: flex;
           justify-content: center;
-          margin-bottom: 23px;
+          margin: 20px auto;
         }
 
         .photo {
@@ -63,31 +80,38 @@ Google Developer Expert in Web Tech, and affiliated Twitch Streamer.
 
         .relocation {
           position: absolute;
-          bottom: -130px;
+          bottom: calc(var(--relocation-height) * -1);
           left: 0;
           right: 0;
         }
 
         @media (min-width: 1140px) {
-          .hero {
-            align-items: flex-start;
-            margin-right: 400px;
-            max-width: 650px;
-          }
-
-          .container {
+          header {
             display: flex;
             align-items: center;
             background: url("/vectors/hero.svg") no-repeat;
             background-position: top right;
+            background-size: cover;
             width: 100%;
+            height: 100%;
+            min-height: 600px;
+            max-height: 900px;
+          }
+
+          .text {
+            align-items: flex-start;
+          }
+
+          .container {
+            flex-direction: row;
+            justify-content: center;
           }
 
           .photo {
-            position: absolute;
-            right: 0;
-            max-height: 100vh;
+            max-height: 100%;
             object-fit: contain;
+            align-self: flex-end;
+            min-width: 650px;
           }
 
           .logo {

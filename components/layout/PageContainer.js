@@ -1,18 +1,19 @@
-const Container = ({ children }) => {
+const PageContainer = ({ children }) => {
   return (
     <>
       <div className="container">{children}</div>
       <style jsx>{`
         .container {
-          max-width: 800px;
           width: 100%;
           padding: 0 20px;
           margin: 0 auto;
+          height: 100%;
         }
 
-        @media (min-width: 1440px) {
+        @media (min-width: 1140px) {
           .container {
-            max-width: 1230px;
+            max-width: 1440px;
+            padding: 0 80px;
           }
         }
       `}</style>
@@ -20,4 +21,4 @@ const Container = ({ children }) => {
   );
 };
 
-export default Container;
+export default PageContainer;
