@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <>
       <header>
-        <PageContainer>
+        <PageContainer fullHeight>
           <div className="container">
             <div className="wrapper">
               <div className="text">
@@ -23,8 +23,8 @@ const Hero = () => {
                   </Heading>
                   <Heading>Rodas</Heading>
                 </div>
-                <Paragraph size="lg">
-                  I'm Full-stack JavaScript Developer, and I help developers to improve their skills while creating
+                <Paragraph size="xl">
+                  I help developers to improve their skills while creating
                   quality products. 
                 </Paragraph>
                 <div className="relocation-container">
@@ -39,9 +39,11 @@ const Hero = () => {
       <style jsx>{`
         header {
           --relocation-height: 130px;
+          --header-mobile-min-height: 600px;
+
           position: relative;
           height: auto;
-          min-height: 600px;
+          min-height: var(--header-mobile-min-height);
           margin-bottom: var(--relocation-height);
         }
 
@@ -69,11 +71,13 @@ const Hero = () => {
         }
 
         .photo {
+          --photo-mobile-max-width: 800px;
+
           display: block;
           bottom: 0;
           margin: 0 auto;
           width: 100%;
-          max-width: 800px;
+          max-width: var(--photo-mobile-max-width);
         }
 
         .relocation-container {
@@ -85,6 +89,8 @@ const Hero = () => {
 
         @media (min-width: 1140px) {
           header {
+            --header-desktop-max-height: 900px;
+
             display: flex;
             align-items: center;
             background: url("/vectors/hero.svg") no-repeat;
@@ -92,8 +98,7 @@ const Hero = () => {
             background-size: cover;
             width: 100%;
             height: 100%;
-            min-height: 600px;
-            max-height: 900px;
+            max-height: var(--header-desktop-max-height);
           }
 
           .text {
@@ -106,10 +111,12 @@ const Hero = () => {
           }
 
           .photo {
+            --photo-desktop-min-width: 700px;
+
             max-height: 100%;
             object-fit: contain;
             align-self: flex-end;
-            min-width: 700px;
+            min-width: var(--photo-desktop-min-width);
           }
 
           .logo {

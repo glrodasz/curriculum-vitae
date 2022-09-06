@@ -61,29 +61,19 @@ const Profile = () => {
         </div>
 
         <Paragraph>
-          Guillermo Rodas is a Full-stack JavaScript Engineer from Colombia,
-          currently living in Stockholm, Sweden.
+          I'm Guillermo Rodas, I'm a Full-stack JavaScript Developer with more
+          than 10 years of experience from Colombia living in Sweden since 2019.
         </Paragraph>
         <Paragraph>
-          Overall in his career, he has witnessed how JavaScript is changing the
-          way we build software in the present and how it is influencing the
-          future. He has worked mostly as a front-end developer on many UI/UX
-          projects. However, don't hesitate in asking him about architecture,
-          brainstorming, product design, Node.js and even about how to learn new
-          things every day.
+          I'm also organizer of CSS Community Dev an umbrella organization for
+          different CSS communities around the world (Medellín, Bogotá, and
+          Stockholm), and organizer of CSS Conf Colombia an international CSS
+          conference.
         </Paragraph>
         <Paragraph>
-          He loves to connect with the tech community and that's why he has had
-          the pleasure to give more than 20 talks in local communities like
-          MedellínJS, MedellínPHP, MedellínJava, and MedellínCSS.
-        </Paragraph>
-        <Paragraph>
-          He also enjoys mentoring. He has given a Full-Stack JavaScript
-          Bootcamp at World Tech Makers, recorded 4 online courses for Platzi
-          and is a mentor in Pioneras Developers and Data Science FEM.
-        </Paragraph>
-        <Paragraph>
-          His favorites CSS colors are tomato, rebeccapurple, and papayawhip
+          I'm Google Developer Expert in Web Technologies, affiliated Twitch
+          Streamer in the Software and Game Development category, and Teacher in
+          Platzi the biggest online education platform in Latin America.
         </Paragraph>
 
         <Carousel

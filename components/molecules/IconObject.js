@@ -11,7 +11,7 @@ const IconObject = ({ icon, flag, title, type, text, footer }) => {
       <div className="icon-object">
         <div className="media">
           {icon && <Icon size="md" name={icon} />}
-          <Heading size="xs" isMarginless>
+          <Heading size="lg" isMarginless>
             {flag}
           </Heading>
         </div>
