@@ -4,6 +4,7 @@ import Hero from "../components/organisms/Hero";
 import Profile from "../components/organisms/Profile";
 import Career from "../components/organisms/Career";
 import Footer from "../components/organisms/Footer";
+import Skills from "../components/organisms/Skills";
 
 const index = () => {
   return (
@@ -15,10 +16,21 @@ const index = () => {
           rel="stylesheet"
         />
       </Head>
-      <Hero />
-      <Profile />
-      <Career />
-      <Footer />
+      <div className="container">
+        <Hero />
+        <Profile />
+        <Skills />
+        <Career />
+        <Footer />
+      </div>
+      <style jsx>{`
+          .container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+          }
+        `}
+      </style>
     </>
   );
 };

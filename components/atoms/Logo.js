@@ -1,17 +1,20 @@
-import React from "react";
-
-const Logo = () => {
+const Logo = ({ logoName, maxWidth }) => {
   return (
     <>
-      <img className="logo" src="/logos/guillermorodas.svg"></img>
+      <img className="logo" src={`/logos/${logoName}.svg`}></img>
       <style jsx>{`
         .logo {
           width: 100%;
-          max-width: 293px;
+          max-width: ${maxWidth}px;
         }
       `}</style>
     </>
   );
+};
+
+Logo.defaultProps = {
+  logoName: "guillermorodas",
+  maxWidth: 293,
 };
 
 export default Logo;

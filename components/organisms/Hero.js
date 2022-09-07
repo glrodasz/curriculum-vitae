@@ -99,6 +99,7 @@ const Hero = () => {
             width: 100%;
             height: 100%;
             max-height: var(--header-desktop-max-height);
+            margin-bottom: 0;
           }
 
           .text {

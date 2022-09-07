@@ -7,7 +7,7 @@ const PageContainer = ({ children, fullHeight }) => {
           width: 100%;
           padding: 0 20px;
           margin: 0 auto;
-          min-height: 100%;
+          ${fullHeight ? "min-height: 100%;" : ""}
           ${fullHeight ? "height: 100%;" : ""}
         }
 

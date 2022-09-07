@@ -37,11 +37,6 @@ const Carousel = ({ items }) => {
         handleClickNext={handleClickNext}
       />
       <div className="content">{items[activeIndex].content}</div>
-      <style jsx>{`
-        .content {
-          min-height: 600px;
-        }
-      `}</style>
     </>
   );
 };

@@ -24,6 +24,7 @@ const CarouselHeader = ({ items, activeIndex, setActiveIndex }) => {
         .header {
           display: flex;
           margin-bottom: 30px;
+          justify-content: center;
         }
 
         .tab {

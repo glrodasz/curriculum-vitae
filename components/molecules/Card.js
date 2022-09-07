@@ -13,7 +13,7 @@ const Card = ({ title, subtitle, items, isInverted }) => {
       >
         <header>
           <Heading size="sm">{title}</Heading>
-          <Paragraph isMarginless>{subtitle}</Paragraph>
+          <Paragraph color="secondary" isMarginless>{subtitle}</Paragraph>
         </header>
         <hr
           style={{
@@ -24,7 +24,7 @@ const Card = ({ title, subtitle, items, isInverted }) => {
           }}
         />
         {items.map((item) => (
-          <Paragraph isMarginless>{item}</Paragraph>
+          <Paragraph color="secondary" isMarginless>{item}</Paragraph>
         ))}
       </div>
       <style jsx>{`

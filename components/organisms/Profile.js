@@ -1,40 +1,10 @@
-import Relocation from "./Relocation";
+
 import Heading from "../atoms/Heading";
 import Paragraph from "../atoms/Paragraph.js";
 import PageContainer from "../layout/PageContainer";
-import Carousel from "../molecules/Carousel";
+
 import IconObject from "../molecules/IconObject";
-import Card from "../molecules/Card";
 
-const cards = [
-  {
-    title: "JavaScript",
-    subtitle: `${new Date().getFullYear() - 2013} years experience`,
-    items: ["JavaScript including ES2015", "JavaSCript MV* frameworks"],
-  },
-  {
-    title: "JavaScript",
-    subtitle: `${new Date().getFullYear() - 2013} years experience`,
-    items: ["JavaScript including ES2015", "JavaSCript MV* frameworks"],
-  },
-  {
-    title: "JavaScript",
-    subtitle: `${new Date().getFullYear() - 2013} years experience`,
-    items: ["JavaScript including ES2015", "JavaSCript MV* frameworks"],
-  },
-  {
-    title: "JavaScript",
-    subtitle: `${new Date().getFullYear() - 2013} years experience`,
-    items: ["JavaScript including ES2015", "JavaSCript MV* frameworks"],
-  },
-];
-
-const skills = [
-  { title: "Node.js", text: "For build web applications" },
-  { title: "Node.js", text: "For build web applications" },
-  { title: "Node.js", text: "For build web applications" },
-  { title: "Node.js", text: "For build web applications" },
-];
 
 const Profile = () => {
   return (
@@ -75,60 +45,17 @@ const Profile = () => {
           Streamer in the Software and Game Development category, and Teacher in
           Platzi the biggest online education platform in Latin America.
         </Paragraph>
-
-        <Carousel
-          items={[
-            {
-              title: "Expertise",
-              content: (
-                <div className="cards">
-                  {cards.map((card, index) => (
-                    <Card {...card} isInverted={index % 2 !== 0} />
-                  ))}
-                </div>
-              ),
-            },
-            {
-              title: "Skills",
-              content: (
-                <div className="skills">
-                  {skills.map((skill) => (
-                    <IconObject icon="diamond-alt" {...skill} />
-                  ))}
-                </div>
-              ),
-            },
-            {
-              title: "Frameworks",
-              content: null,
-            },
-          ]}
-        />
       </div>
       <style jsx>{`
-        .profile {
-          padding: 50px 0 40px;
-        }
-
         .languages {
           display: flex;
           flex-direction: column;
-        }
-
-        .cards {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0 30px;
         }
 
         @media (min-width: 1140px) {
           .languages {
             flex-direction: row;
             grid-gap: 20px;
-          }
-
-          .cards {
-            justify-content: space-between;
           }
         }
       `}</style>

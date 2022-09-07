@@ -29,6 +29,10 @@ const Paragraph = ({ children, size, color, isMarginless, isInverted }) => {
           color: var(--bunker);
         }
 
+        .color-tertiary {
+          color: var(--scooter);
+        }
+
         .size-xl {
           font-size: 2.8rem;
         }

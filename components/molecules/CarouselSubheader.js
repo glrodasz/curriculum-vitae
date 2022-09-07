@@ -38,7 +38,9 @@ const CarouselSubheader = ({
         }
 
         .subheader :global(.heading) {
-          width: 150px;
+          --subheader-width: 160px;
+
+          width: var(--subheader-width);
         }
       `}</style>
     </>

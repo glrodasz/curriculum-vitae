@@ -5,7 +5,7 @@ import Paragraph from "../atoms/Paragraph";
 
 const getHeadingSize = (type) => (type === "secondary" ? "xxs" : "xs");
 
-const IconObject = ({ icon, flag, title, type, text, footer }) => {
+const IconObject = ({ icon, flag, title, type, text }) => {
   return (
     <>
       <div className="icon-object">
@@ -16,11 +16,13 @@ const IconObject = ({ icon, flag, title, type, text, footer }) => {
           </Heading>
         </div>
         <div className="content">
-          <Heading size={getHeadingSize(type)} color={type} isMarginless>
-            {title}
-          </Heading>
+          {title && (
+            <Heading size={getHeadingSize(type)} color={type} isMarginless>
+              {title}
+            </Heading>
+          )}
           {text && (
-            <Paragraph color="secondary" isMarginless>
+            <Paragraph isMarginless>
               {text}
             </Paragraph>
           )}
