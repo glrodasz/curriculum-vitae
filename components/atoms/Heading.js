@@ -30,10 +30,6 @@ const Heading = ({
           margin-bottom: 5px;
         }
 
-        .heading > :global(*) {
-          vertical-align: middle;
-        }
-
         .heading :global(strong) {
           color: var(--golden-yellow);
         }

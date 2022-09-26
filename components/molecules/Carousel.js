@@ -25,18 +25,27 @@ const Carousel = ({ items }) => {
 
   return (
     <>
-      <CarouselHeader
-        items={items}
-        setActiveIndex={setActiveIndex}
-        activeIndex={activeIndex}
-      />
-      <CarouselSubheader
-        items={items}
-        activeIndex={activeIndex}
-        handleClickPrev={handleClickPrev}
-        handleClickNext={handleClickNext}
-      />
-      <div className="content">{items[activeIndex].content}</div>
+      <div className="carousel">
+        <CarouselHeader
+          items={items}
+          setActiveIndex={setActiveIndex}
+          activeIndex={activeIndex}
+        />
+        <CarouselSubheader
+          items={items}
+          activeIndex={activeIndex}
+          handleClickPrev={handleClickPrev}
+          handleClickNext={handleClickNext}
+        />
+        <div className="content">{items[activeIndex].content}</div>
+      </div>
+      <style jsx>{`
+        .carousel {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+      `}</style>
     </>
   );
 };

@@ -23,7 +23,6 @@ const CarouselHeader = ({ items, activeIndex, setActiveIndex }) => {
       <style jsx>{`
         .header {
           display: flex;
-          margin-bottom: 30px;
           justify-content: center;
         }
 

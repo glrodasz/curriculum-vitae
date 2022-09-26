@@ -12,6 +12,7 @@ const CarouselSubheader = ({
   return (
     <>
       <div className="subheader">
+        <div className="content">
         <Icon
           name="chevron-left"
           isRounded
@@ -30,17 +31,34 @@ const CarouselSubheader = ({
           onClick={handleClickNext}
         />
       </div>
+      {items[activeIndex].heading && (
+        <Heading size="xs" isCentered>{items[activeIndex].heading}</Heading>
+      )}
+      </div>
       <style jsx>{`
-        .subheader {
+        .content {
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
-        .subheader :global(.heading) {
+        .subheader {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .content :global(.heading) {
           --subheader-width: 160px;
 
           width: var(--subheader-width);
+        }
+
+        @media (min-width: 1140px) {
+          .subheader {
+            max-width: fit-content;
+          }
         }
       `}</style>
     </>

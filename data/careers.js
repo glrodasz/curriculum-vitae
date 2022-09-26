@@ -1,6 +1,7 @@
 export const careers = [
 	{
 		date: "Currently",
+		duaration: "1 year, 6 months",
 		company: "Klarna",
 		url: "https://klarna.com",
 		logo: "klarna",
@@ -14,6 +15,7 @@ export const careers = [
 	},
 	{
 		date: "2012",
+		duaration: "1 year, 6 months",
 		company: "Komet Sales",
 		url: "https://kometsales.com",
 		logo: "",

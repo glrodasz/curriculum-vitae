@@ -22,9 +22,9 @@ const IconObject = ({ icon, flag, title, type, text }) => {
             </Heading>
           )}
           {text && (
-            <Paragraph isMarginless>
-              {text}
-            </Paragraph>
+              <Paragraph isMarginless>
+                {text}
+              </Paragraph>
           )}
         </div>
       </div>
@@ -33,10 +33,11 @@ const IconObject = ({ icon, flag, title, type, text }) => {
           display: flex;
           margin-bottom: 15px;
           align-items: ${text ? "flex-start" : "center"};
+          gap: 15px;
         }
 
         .content {
-          margin-left: ${text ? "10px" : "5px"};
+          width: 100%;
         }
       `}</style>
     </>
