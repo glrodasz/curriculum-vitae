@@ -64,7 +64,7 @@ const Footer = ({}) => {
 
       <style jsx>{`
         footer {
-          padding: 80px 20px 0;
+          padding: 80px 0 0;
           background: var(--black);
         }
 
