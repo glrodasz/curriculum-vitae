@@ -75,10 +75,9 @@ const Footer = ({}) => {
         }
 
         .logo {
-          height: 200px;
-          width: 100%;
-          object-fit: none;
-          object-position: center 50px;
+          height: 250px;
+          object-fit: contain;
+          object-position: center 100px;
         }
 
         .footer {
