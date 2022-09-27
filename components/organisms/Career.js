@@ -16,7 +16,7 @@ const Career = () => {
         items={careers.map((career) => ({
           title: career.date,
           subtitle: career.company,
-          heading: career.duaration,
+          heading: career.duration,
           content: <Job career={career} />,
         }))}
       />

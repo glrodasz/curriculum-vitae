@@ -43,7 +43,8 @@ const Carousel = ({ items }) => {
         .carousel {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 35px;
+          margin-top: 20px;
         }
       `}</style>
     </>

@@ -1,3 +1,4 @@
+// FIXME: Put expertises, stack and frameworks in one array
 export const expertises = [
   {
     title: "JavaScript",
@@ -29,8 +30,8 @@ export const stack = [
 ];
 
 export const frameworks = [
-	{ title: "Node.js", text: "For build web applications" },
-	{ title: "Node.js", text: "For build web applications" },
-	{ title: "Node.js", text: "For build web applications" },
-	{ title: "Node.js", text: "For build web applications" },
-  ];
+  { title: "Node.js", text: "For build web applications" },
+  { title: "Node.js", text: "For build web applications" },
+  { title: "Node.js", text: "For build web applications" },
+  { title: "Node.js", text: "For build web applications" },
+];

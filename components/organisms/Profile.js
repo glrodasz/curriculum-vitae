@@ -3,7 +3,7 @@ import Heading from "../atoms/Heading";
 import Paragraph from "../atoms/Paragraph.js";
 import PageContainer from "../layout/PageContainer";
 
-import IconObject from "../molecules/IconObject";
+import Item from "../molecules/Item";
 
 
 const Profile = () => {
@@ -14,15 +14,15 @@ const Profile = () => {
           <strong>Personal</strong> profile
         </Heading>
 
-        <IconObject icon="language" title="Language" />
+        <Item icon="language" title="Language" />
         <div className="languages">
-          <IconObject
+          <Item
             flag="🇪🇸"
             title="Spanish"
             type="secondary"
             text="Native"
           />
-          <IconObject
+          <Item
             flag="🇬🇧"
             title="English"
             type="secondary"

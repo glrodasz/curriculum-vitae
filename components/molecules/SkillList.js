@@ -1,10 +1,10 @@
-import IconObject from "../molecules/IconObject";
+import Item from "./Item";
 
 const SkillList = ({ skills }) => {
   return (
     <div className="list">
       {skills.map((skill) => (
-        <IconObject icon="diamond-alt" {...skill} />
+        <Item icon="diamond-alt" {...skill} />
       ))}
     </div>
   );

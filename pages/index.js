@@ -5,6 +5,7 @@ import Profile from "../components/organisms/Profile";
 import Career from "../components/organisms/Career";
 import Footer from "../components/organisms/Footer";
 import Skills from "../components/organisms/Skills";
+import Knowledge from "../components/organisms/Knowledge";
 
 const index = () => {
   return (
@@ -21,6 +22,7 @@ const index = () => {
         <Profile />
         <Skills />
         <Career />
+        <Knowledge />
         <Footer />
       </div>
       <style jsx>{`

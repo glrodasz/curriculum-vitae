@@ -1,5 +1,5 @@
 import React from "react";
-import IconObject from "../molecules/IconObject";
+import Item from "./Item";
 import Logo from "../atoms/Logo";
 
 import Heading from "../atoms/Heading";
@@ -28,7 +28,7 @@ const Job = ({ career }) => {
           <Heading size="xs">My achievements</Heading>
           <div className="list">
             {career.achievements.map((achievement) => (
-              <IconObject icon="diamond-alt" text={achievement} />
+              <Item icon="diamond-alt" text={achievement} />
             ))}
           </div>
         </div>
