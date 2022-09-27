@@ -118,6 +118,7 @@ const Hero = () => {
             object-fit: contain;
             align-self: flex-end;
             min-width: var(--photo-desktop-min-width);
+            margin-top: 100px;
           }
 
           .logo {

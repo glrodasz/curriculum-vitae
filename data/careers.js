@@ -1,9 +1,9 @@
 export const careers = [
 	{
 		date: "Currently",
-		duaration: "1 year, 6 months",
+		duaration: "2 years",
 		company: "Klarna",
-		url: "https://klarna.com",
+		url: "www.klarna.com",
 		logo: "klarna",
 		about: "The principal alcohol in Purell hand sanitizer (to take the most talked-about brand) is 70% ethanol (ethyl alcohol), with a smaller amount of isopropyl alcohol.",
 		functions: "The principal alcohol in Purell hand sanitizer (to take the most talked-about brand) is 70% ethanol (ethyl alcohol), with a smaller amount of isopropyl alcohol.",
@@ -15,10 +15,10 @@ export const careers = [
 	},
 	{
 		date: "2012",
-		duaration: "1 year, 6 months",
+		duaration: "2 years, 6 months",
 		company: "Komet Sales",
-		url: "https://kometsales.com",
-		logo: "",
+		url: "www.kometsales.com",
+		logo: "komet",
 		about: "The principal alcohol in Purell hand sanitizer (to take the most talked-about brand) is 70% ethanol (ethyl alcohol), with a smaller amount of isopropyl alcohol.",
 		functions: "The principal alcohol in Purell hand sanitizer (to take the most talked-about brand) is 70% ethanol (ethyl alcohol), with a smaller amount of isopropyl alcohol.",
 		achievements: [

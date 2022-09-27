@@ -5,6 +5,7 @@ const Heading = ({
   children,
   size,
   color,
+  weight = "bold",
   isCentered,
   isMarginless,
   isComfortable,
@@ -13,7 +14,7 @@ const Heading = ({
   return (
     <>
       <h1
-        className={classNames("heading", `size-${size} color-${color}`, {
+        className={classNames("heading", `size-${size} color-${color} weight-${weight}`, {
           "is-centered": isCentered,
           "is-marginless": isMarginless,
           "is-comfortable": isComfortable,
@@ -25,7 +26,6 @@ const Heading = ({
       <style jsx>{`
         .heading {
           font-family: "Hind", sans-serif;
-          font-weight: bold;
           line-height: 1;
           margin-bottom: 5px;
         }
@@ -77,6 +77,14 @@ const Heading = ({
         .is-comfortable {
           margin-left: 10px;
           margin-right: 10px;
+        }
+
+        .weight-normal {
+          font-weight: normal;
+        }
+
+        .weight-bold {
+          font-weight: bold;
         }
 
         @media (min-width: 1140px) {

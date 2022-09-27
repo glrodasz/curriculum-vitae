@@ -12,7 +12,7 @@ const index = () => {
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Lato&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
           rel="stylesheet"
         />
       </Head>

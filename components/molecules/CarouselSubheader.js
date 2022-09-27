@@ -50,7 +50,7 @@ const CarouselSubheader = ({
         }
 
         .content :global(.heading) {
-          --subheader-width: 160px;
+          --subheader-width: 180px;
 
           width: var(--subheader-width);
         }

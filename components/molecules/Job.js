@@ -10,8 +10,10 @@ const Job = ({ career }) => {
   return (
     <>
       <div className="job">
-        <Logo logoName={career.logo} />
-        <Link href={career.url} />
+        <div className="header">
+          <Logo logoName={career.logo} />
+          <Link href={career.url} weight="normal" />
+        </div>
         <div>
           <Heading size="xs">About</Heading>
           <Paragraph>{career.about}</Paragraph>
@@ -27,29 +29,52 @@ const Job = ({ career }) => {
           <div className="list">
             {career.achievements.map((achievement) => (
               <IconObject icon="diamond-alt" text={achievement} />
-            ))} 
+            ))}
           </div>
         </div>
       </div>
-      <style>{`
-		.job {
-			display: "flex", flexDirection: "column", gap: 20
-		}
+      <style jsx>{`
+        .job {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 25px;
+        }
 
-		@media (min-width: 1140px) {
-			.job {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 20px;
-			}
+        .achievements {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
 
-			.achievements {
-				grid-column: 2;
-				grid-row: 1/5;
+        .header {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          align-items: center;
+        }
 
-			}
-		}
-		`}</style>
+        @media (min-width: 1140px) {
+          .job {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+          }
+
+          .achievements {
+            grid-column: 2;
+            grid-row: 1/5;
+          }
+
+          .achievements > :global(.heading) {
+            margin-left: 35px;
+          }
+
+          .header {
+            align-items: flex-start;
+          }
+        }
+      `}</style>
     </>
   );
 };
