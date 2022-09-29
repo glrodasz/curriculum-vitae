@@ -5,6 +5,7 @@ const PageContainer = ({ children, fullHeight }) => {
       <style jsx>{`
         .container {
           width: 100%;
+          max-width: 768px;
           padding: 0 20px;
           margin: 0 auto;
           ${fullHeight ? "min-height: 100%;" : ""}

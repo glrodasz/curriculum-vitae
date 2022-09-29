@@ -12,7 +12,7 @@ const Job = ({ career }) => {
       <div className="job">
         <div className="header">
           <Logo logoName={career.logo} />
-          <Link href={career.url} weight="normal" />
+          <Link href={`https://${career.url}`} weight="normal">{career.url}</Link>
         </div>
         <div>
           <Heading size="xs">About</Heading>
@@ -67,7 +67,7 @@ const Job = ({ career }) => {
           }
 
           .achievements > :global(.heading) {
-            margin-left: 35px;
+            margin-left: 25px;
           }
 
           .header {

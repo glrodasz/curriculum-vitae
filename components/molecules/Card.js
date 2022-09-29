@@ -23,16 +23,24 @@ const Card = ({ title, subtitle, items, isInverted }) => {
             background: "var(--white)",
           }}
         />
+        <div className="items">
         {items.map((item) => (
-          <Paragraph color="secondary" isMarginless>{item}</Paragraph>
+          <Paragraph size="sm" color="secondary" isMarginless>{item}</Paragraph>
         ))}
+        </div>
       </div>
       <style jsx>{`
         .card {
           background: var(--golden-yellow);
-          padding: 30px 60px;
+          padding: 30px 50px;
           margin: 15px 0;
           width: 100%;
+        }
+
+        .items {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
         }
 
         .is-inverted {
@@ -53,7 +61,7 @@ const Card = ({ title, subtitle, items, isInverted }) => {
 
         @media (min-width: 1440px) {
           .card {
-            max-width: 270px;
+            max-width: 290px;
           }
         }
       `}</style>

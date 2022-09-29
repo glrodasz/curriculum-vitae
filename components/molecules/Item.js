@@ -6,32 +6,51 @@ import classNames from "classnames";
 
 const getHeadingSize = (type) => (type === "secondary" ? "xxs" : "xs");
 
+const Paragraphs = ({ text }) => {
+  if (Array.isArray(text)) {
+    return text.map(([description, date]) => {
+      return (
+        <div style={{ display: "flex", alignItems: "baseline", gap: 5}}>
+          <Paragraph isMarginless>{description},</Paragraph>
+          <Heading color="secondary" size="xxs" weight="normal" isMarginless>
+            {date}
+          </Heading>
+        </div>
+      );
+    });
+  }
+
+  return <Paragraph isMarginless>{text}</Paragraph>;
+};
+
 const Item = ({ icon, flag, title, type, text, footer }) => {
   return (
     <>
       <div className="item">
-        <div
-          className={classNames("media", {
-            "is-centered-with-text": !title,
-          })}
-        >
-          {icon && <Icon size="md" name={icon} />}
-          <Heading size="lg" isMarginless>
-            {flag}
-          </Heading>
-        </div>
+        {(icon || flag) && (
+          <div
+            className={classNames("media", {
+              "is-centered-with-text": !title,
+            })}
+          >
+            {icon && <Icon size="md" name={icon} />}
+            <Heading size="xs" isMarginless>
+              {flag}
+            </Heading>
+          </div>
+        )}
         <div className="content">
           {title && (
             <Heading size={getHeadingSize(type)} color={type} isMarginless>
               {title}
             </Heading>
           )}
-          {text && <Paragraph isMarginless>{text}</Paragraph>}
+          {text && <Paragraphs text={text} />}
           {footer && (
-          <Heading color="secondary" size="xxs" weight="normal">
-            {footer}
-          </Heading>
-        )}
+            <Heading color="secondary" size="xxs" weight="normal">
+              {footer}
+            </Heading>
+          )}
         </div>
       </div>
       <style jsx>{`
@@ -39,7 +58,7 @@ const Item = ({ icon, flag, title, type, text, footer }) => {
           display: flex;
           margin-bottom: 15px;
           align-items: ${text ? "flex-start" : "center"};
-          gap: 15px;
+          gap: 10px;
         }
 
         .content {

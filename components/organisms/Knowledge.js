@@ -4,17 +4,16 @@ import Heading from "../atoms/Heading";
 import Carousel from "../molecules/Carousel";
 import Item from "../molecules/Item";
 
-import { knowledge } from "../../data/knowledge";
 
-const Knowledge = () => {
+const Knowledge = ({ title, items}) => {
   return (
     <>
       <PageContainer>
         <Heading size="md" isCentered>
-          <strong>Knowledge</strong> background
+          <strong>{title[0]}</strong> {title[1]}
         </Heading>
         <Carousel
-          items={knowledge.map((item) => ({
+          items={items.map((item) => ({
             title: item.title,
             content: (
               <div className="content">

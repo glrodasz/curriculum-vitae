@@ -41,8 +41,8 @@ const Footer = ({}) => {
                 </div>
                 <div className="item">
                   <Icon name="cellphone" />
-                  <Link href="tel:+4607640378xx" isInverted>
-                    +(46) 076 403 78 xx
+                  <Link href="tel:+460764037871" isInverted>
+                    +(46) 076 403 78 71
                   </Link>
                 </div>
               </div>
@@ -122,13 +122,13 @@ const Footer = ({}) => {
           }
 
           .social-networks {
-            margin-bottom: 0;
+            margin-bottom: 30px;
           }
 
           .logo {
             height: 100%;
             object-fit: contain;
-            object-position: left 150px;
+            object-position: center 150px;
           }
         }
       `}</style>

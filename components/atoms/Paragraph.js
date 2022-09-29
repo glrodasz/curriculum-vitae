@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-const Paragraph = ({ children, size, color, isMarginless, isInverted }) => {
+const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isInverted }) => {
   return (
     <>
       <p
@@ -59,11 +59,6 @@ const Paragraph = ({ children, size, color, isMarginless, isInverted }) => {
       `}</style>
     </>
   );
-};
-
-Paragraph.defaultProps = {
-  size: "md",
-  color: "primary",
 };
 
 export default Paragraph;
