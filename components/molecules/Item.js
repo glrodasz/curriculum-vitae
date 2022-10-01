@@ -8,16 +8,25 @@ const getHeadingSize = (type) => (type === "secondary" ? "xxs" : "xs");
 
 const Paragraphs = ({ text }) => {
   if (Array.isArray(text)) {
-    return text.map(([description, date]) => {
-      return (
-        <div style={{ display: "flex", alignItems: "baseline", gap: 5}}>
-          <Paragraph isMarginless>{description},</Paragraph>
-          <Heading color="secondary" size="xxs" weight="normal" isMarginless>
-            {date}
-          </Heading>
-        </div>
-      );
-    });
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {text.map(([description, date]) => {
+          return (
+            <div>
+              <Paragraph isMarginless>{description}</Paragraph>
+              <Heading
+                color="secondary"
+                size="xxs"
+                weight="normal"
+                isMarginless
+              >
+                {date}
+              </Heading>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 
   return <Paragraph isMarginless>{text}</Paragraph>;

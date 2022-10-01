@@ -19,18 +19,11 @@ export const knowledge = [
     items: [
       {
         title: "Platzi",
-        text: "JavaScript Backend Career",
-        footer: "80 Hours, March 2019.",
-      },
-      {
-        title: "Platzi",
-        text: "English Career",
-        footer: "75 Hours, March 2019.",
-      },
-      {
-        title: "Platzi",
-        text: "Frontend Architect Career",
-        footer: "90 Hours, December 2018.",
+        text: [
+          ["JavaScript Backend Career", "80 Hours, March 2019"],
+          ["English Career", "75 Hours, March 2019"],
+          ["Frontend Architect Career", "90 Hours, December 2018"],
+        ],
       },
       {
         title: "Platzi",
