@@ -5,7 +5,7 @@ export const achievements = [
       {
         title: "Platzi Master",
         text: "Technical coach",
-        footer: "Noviembre 2021 — Septiembre 2022",
+        footer: "November 2020",
       },
       {
         title: "Women Developer Academy Europe",
