@@ -1,0 +1,17 @@
+:root {
+  --golden-yellow: #f7df1d;
+  --scooter: #36b7c9;
+  --black: #000;
+  --storm-dust: #616161;
+  --bunker: #2c2c2c;
+  --white: #fff;
+  --concrete: #f3f1f1;
+}
+
+html {
+  font-size: 12px;
+}
+
+html, body, #__next {
+  height: 100%;
+}

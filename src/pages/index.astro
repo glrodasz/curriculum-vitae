@@ -1,0 +1,32 @@
+---
+import "minireset.css/minireset.css";
+import "../styles/main.css";
+import Hero from "../components/organisms/Hero.jsx";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
+      rel="stylesheet"
+    />
+    <title>Astro</title>
+  </head>
+  <body>
+    <main class="container">
+      <Hero />
+    </main>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+    </style>
+  </body>
+</html>

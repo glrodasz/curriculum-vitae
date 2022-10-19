@@ -1,25 +1,24 @@
 {
-  "name": "glrodasz-cv",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@glrodasz/curriculum-vitae",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/lab": "^5.0.0-alpha.123",
-    "@mui/material": "^5.11.13",
-    "classnames": "^2.3.1",
+    "@astrojs/react": "^2.1.0",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "astro": "^2.1.3",
+    "classnames": "^2.3.2",
+    "global": "^4.4.0",
     "minireset.css": "^0.0.7",
-    "next": "^13.2.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }
