@@ -10,7 +10,7 @@ export const careers = [
     about:
       "EQT is a private equity firm that invests in companies and regions where there is an industrial approach.",
     functions: "Senior Full-stack Engineer.",
-    achievements: ["", ""],
+    achievements: [],
   },
   {
     date: "2019",

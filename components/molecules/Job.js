@@ -24,14 +24,14 @@ const Job = ({ career }) => {
           <Paragraph>{career.functions}</Paragraph>
         </div>
 
-        <div className="achievements">
+        {!!career.achievements?.length && <div className="achievements">
           <Heading size="xs">My achievements</Heading>
           <div className="list">
             {career.achievements.map((achievement) => (
               <Item icon="diamond-alt" text={achievement} />
             ))}
           </div>
-        </div>
+        </div>}
       </div>
       <style jsx>{`
         .job {
