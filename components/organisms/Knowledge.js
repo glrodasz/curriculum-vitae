@@ -4,8 +4,7 @@ import Heading from "../atoms/Heading";
 import Carousel from "../molecules/Carousel";
 import Item from "../molecules/Item";
 
-
-const Knowledge = ({ title, items}) => {
+const Knowledge = ({ title, items }) => {
   return (
     <>
       <PageContainer>
@@ -30,6 +29,7 @@ const Knowledge = ({ title, items}) => {
           .content {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: masonry;
             gap: 20px;
           }
         `}</style>

@@ -23,17 +23,9 @@ export const knowledge = [
           ["JavaScript Backend Career", "80 Hours, March 2019"],
           ["English Career", "75 Hours, March 2019"],
           ["Frontend Architect Career", "90 Hours, December 2018"],
+          ["React Development Career", "60 Hours", "April 2018"],
+          ["JavaScript Development Career", "120 Hours", "April 2018"]
         ],
-      },
-      {
-        title: "Platzi",
-        text: "React Development Career",
-        footer: "60 Hours, April 2018.",
-      },
-      {
-        title: "Platzi",
-        text: "JavaScript Development Career",
-        footer: "120 Hours, April 2018.",
       },
       {
         title: "Actívate",
