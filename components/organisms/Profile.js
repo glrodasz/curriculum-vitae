@@ -33,36 +33,20 @@ const Profile = () => {
 
         <div>
           <Paragraph size="lg">
-            I'm a Full-stack JavaScript Developer with more than{" "}
-            {new Date().getFullYear() - 2012} years of experience from Medellín,
-            Colombia (the city of the eternal spring) but living in Stockholm,
-            Sweden (the city of the eternal winter) since 2019.
+            I'm Guillermo Rodas, I'm a Full-stack JavaScript Developer with more
+            than {new Date().getFullYear() - 2012} years of experience from
+            Colombia living in Sweden since 2019.
           </Paragraph>
           <Paragraph size="lg">
-            I have always love to connect with the tech community, and since
-            very early in my career I learn by teaching giving talks in
-            different local communities. It has been more than 30 talks in
-            meetups, podcasts, and events.
-          </Paragraph>
-          <Paragraph size="lg">
-            Because I really love the idea of give to the community I also
-            become organizer of CSS Community Dev an umbrella organization for
+            I'm also organizer of CSS Community Dev an umbrella organization for
             different CSS communities around the world (Medellín, Bogotá, and
-            Stockholm), and later I become organizer of CSS Conf Colombia an
-            international conference about CSS.
+            Stockholm), and organizer of CSS Conf Colombia an international CSS
+            conference.
           </Paragraph>
           <Paragraph size="lg">
-            I enjoy mentoring, and in 2019 I had the opportunity of joining the
-            Google Developer Experts group for the category of Web Technologies.
-            Later in 2020 I started as a Twitch Streamer in the Software and
-            Game Development category, where I show to other developers how I
-            usually solve problems. I have also recorded 4 courses with Platzi
-            the biggest online education platform in Latin America.
-          </Paragraph>
-          <Paragraph size="lg">
-            In my free time I like to read, learn new things, take care of my
-            pets, watch movies and series, do oil painting, and play board games
-            with my friends.
+            I'm Google Developer Expert in Web Technologies, affiliated Twitch
+            Streamer in the Software and Game Development category, and Teacher
+            in Platzi the biggest online education platform in Latin America.
           </Paragraph>
         </div>
       </div>

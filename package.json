@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mui/lab": "^5.0.0-alpha.107",
     "classnames": "^2.3.1",
     "minireset.css": "^0.0.7",
     "next": "^10.0.7",

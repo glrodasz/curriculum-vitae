@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CarouselHeader from "./CarouselHeader";
 import CarouselSubheader from "./CarouselSubheader";

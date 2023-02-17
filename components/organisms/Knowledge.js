@@ -3,6 +3,7 @@ import PageContainer from "../layout/PageContainer";
 import Heading from "../atoms/Heading";
 import Carousel from "../molecules/Carousel";
 import Item from "../molecules/Item";
+import Masonry from '@mui/lab/Masonry';
 
 const Knowledge = ({ title, items }) => {
   return (
@@ -16,9 +17,11 @@ const Knowledge = ({ title, items }) => {
             title: item.title,
             content: (
               <div className="content">
+                <Masonry columns={2}>
                 {item.items.map((subitem) => (
                   <Item icon="diamond-alt" {...subitem} />
                 ))}
+                </Masonry>
               </div>
             ),
           }))}
