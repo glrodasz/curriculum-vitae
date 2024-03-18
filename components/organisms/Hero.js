@@ -89,7 +89,7 @@ const Hero = () => {
 
         @media (min-width: 1140px) {
           header {
-            --header-desktop-max-height: 900px;
+            --header-desktop-max-height: 950px;
 
             display: flex;
             align-items: center;
@@ -112,7 +112,7 @@ const Hero = () => {
           }
 
           .photo {
-            --photo-desktop-min-width: 700px;
+            --photo-desktop-min-width: 500px;
 
             max-height: 100%;
             object-fit: contain;
