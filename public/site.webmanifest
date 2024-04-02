@@ -1,0 +1,19 @@
+{
+    "name": "Guillermo Rodas",
+    "short_name": "GLRZ",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#F7DF1D",
+    "background_color": "#F7DF1D",
+    "display": "standalone"
+}

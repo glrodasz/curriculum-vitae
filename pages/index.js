@@ -18,17 +18,24 @@ const index = () => {
           href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
           rel="stylesheet"
         />
+
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#F7DF1D" />
       </Head>
       <div className="container">
         <Hero />
         <Profile />
         <Skills />
         <Career />
-        <Knowledge title={["Knowledge", "background"]} items={knowledge}/>
-        <Knowledge title={["Volunteer", "experience"]} items={achievements}/>
+        <Knowledge title={["Knowledge", "background"]} items={knowledge} />
+        <Knowledge title={["Volunteer", "experience"]} items={achievements} />
         <Footer />
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
           .container {
             display: flex;
             flex-direction: column;
