@@ -28,5 +28,6 @@
   "devDependencies": {
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4"
-  }
+  },
+  "packageManager": "yarn@4.1.1+sha256.f3cc0eda8e5560e529c7147565b30faa43b4e472d90e8634d7134a37c7f59781"
 }

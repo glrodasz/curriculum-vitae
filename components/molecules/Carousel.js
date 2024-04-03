@@ -103,6 +103,7 @@ const Carousel = ({ items }) => {
           height: auto;
           opacity: 1;
           transition: opacity 0.8s ease-in-out;
+          z-index: 10;
         }
 
         .content.is-active > :global(.masonry-container) {
