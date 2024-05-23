@@ -85,7 +85,7 @@ const Carousel = ({ items }) => {
           background: rgba(255, 255, 255, 0.8);
           backdrop-filter: blur(10px);
           padding-bottom: 20px;
-          z-index: 10;
+          z-index: 20;
         }
 
         .content {
