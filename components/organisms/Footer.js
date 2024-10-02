@@ -39,12 +39,6 @@ const Footer = () => {
                     undefined.sh
                   </Link>
                 </div>
-                <div className="item">
-                  <Icon name="cellphone" />
-                  <Link href="tel:+16173910175" isInverted>
-                    +(1) 617 391 0175
-                  </Link>
-                </div>
               </div>
               <div className="social-networks">
                 <Heading size="xxs" isInverted isMarginless>
