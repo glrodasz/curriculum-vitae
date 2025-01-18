@@ -19,7 +19,7 @@ const Hero = () => {
                 <Heading size="sm">Hello,</Heading>
                 <div className="fullname">
                   <Heading>
-                    I&apos;m <strong className="shadow">Guillermo</strong>
+                    I&apos;m <strong>Guillermo</strong>
                   </Heading>
                   <Heading>Rodas</Heading>
                 </div>
@@ -62,6 +62,8 @@ const Hero = () => {
         .text {
           display: flex;
           flex-direction: column;
+          -webkit-text-stroke: 5px var(--white);
+          paint-order: stroke fill;
         }
 
         .logo {
@@ -130,6 +132,10 @@ const Hero = () => {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
+          }
+
+          .fullname strong {
+            -webkit-text-stroke: 5px var(--black);
           }
 
           .relocation-container {
