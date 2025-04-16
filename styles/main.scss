@@ -22,43 +22,45 @@
 	--carousel-nav-bg: rgba(255, 255, 255, 0.8);
   }
   
+  /* SASS mixins for theme variables */
+  @mixin dark-theme {
+    --background: var(--bunker);
+    --text: var(--white);
+    --text-inverted: var(--black);
+    --primary: var(--light-cream);
+    --secondary: var(--concrete);
+    --paragraph-primary: var(--light-cream);
+    --paragraph-secondary: var(--black);
+    --heading-secondary: var(--blue);
+    --carousel-nav-bg: rgba(26, 26, 26, 0.85);
+  }
+  
+  @mixin light-theme {
+    --background: var(--white);
+    --text: var(--black);
+    --text-inverted: var(--white);
+    --primary: var(--scooter);
+    --secondary: var(--storm-dust);
+    --paragraph-primary: var(--storm-dust);
+    --paragraph-secondary: var(--black);
+    --heading-secondary: var(--scooter);
+    --carousel-nav-bg: rgba(255, 255, 255, 0.8);
+  }
+  
   /* Apply dark theme based on system preferences */
   @media (prefers-color-scheme: dark) {
     :root:not(.freeze-mode):not(.user-theme) {
-      --background: var(--bunker);
-      --text: var(--white);
-      --text-inverted: var(--black);
-      --primary: var(--light-cream);
-      --secondary: var(--concrete);
-      --paragraph-primary: var(--light-cream);
-      --paragraph-secondary: var(--black);
-      --heading-secondary: var(--blue);
-      --carousel-nav-bg: rgba(26, 26, 26, 0.85);
+      @include dark-theme;
     }
   }
   
   /* User preference (from localStorage) takes precedence */
   :root.dark {
-	--background: var(--bunker);
-	--text: var(--white);
-	--text-inverted: var(--black);
-	--primary: var(--light-cream);
-	--secondary: var(--concrete);
-	--paragraph-primary: var(--light-cream);
-	--heading-secondary: var(--blue);
-	--carousel-nav-bg: rgba(26, 26, 26, 0.85);
+    @include dark-theme;
   }
   
   .freeze-mode {
-	--background: var(--white) !important;
-	--text: var(--black) !important;
-	--text-inverted: var(--white) !important;
-	--primary: var(--scooter) !important;
-	--secondary: var(--storm-dust) !important;
-	--paragraph-primary: var(--storm-dust) !important;
-	--paragraph-secondary: var(--black) !important;
-	--heading-secondary: var(--scooter) !important;
-	--carousel-nav-bg: rgba(255, 255, 255, 0.8) !important;
+    @include light-theme;
   }
   
   html {
