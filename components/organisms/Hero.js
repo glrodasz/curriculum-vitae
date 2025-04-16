@@ -77,7 +77,7 @@ const Hero = () => {
         .text {
           display: flex;
           flex-direction: column;
-          -webkit-text-stroke: 5px var(--white);
+          -webkit-text-stroke: 3px var(--text-inverted);
           paint-order: stroke fill;
         }
 
@@ -163,7 +163,7 @@ const Hero = () => {
           }
 
           .fullname strong {
-            -webkit-text-stroke: 5px var(--black);
+            -webkit-text-stroke: 3px var(--black);
           }
 
           .relocation-container {

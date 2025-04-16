@@ -7,19 +7,26 @@
   --white: #fff;
   --concrete: #f3f1f1;
   --gray: #B3B3B3;
+  --light-cream: #FEFADF;
   
   /* Theme variables */
   --background: var(--white);
   --text: var(--black);
+  --text-inverted: var(--white);
   --primary: var(--scooter);
   --secondary: var(--storm-dust);
+  --paragraph-primary: var(--storm-dust);
+  --paragraph-secondary: var(--scooter);
 }
 
 .dark {
   --background: var(--bunker);
   --text: var(--white);
-  --primary: var(--scooter);
+  --text-inverted: var(--black);
+  --primary: var(--light-cream);
   --secondary: var(--concrete);
+  --paragraph-primary: var(--light-cream);
+  --paragraph-secondary: var(--scooter);
 }
 
 html {

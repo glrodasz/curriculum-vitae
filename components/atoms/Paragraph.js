@@ -23,11 +23,11 @@ const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isI
         }
 
         .color-primary {
-          color: var(--storm-dust);
+          color: var(--paragraph-primary);
         }
 
         .color-secondary {
-          color: var(--bunker);
+          color: var(--paragraph-secondary);
         }
 
         .color-tertiary {

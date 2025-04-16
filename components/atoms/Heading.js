@@ -37,7 +37,7 @@ const Heading = ({
         }
 
         .color-primary {
-          color: var(--black);
+          color: var(--text);
         }
 
         .color-secondary {
