@@ -13,7 +13,7 @@ const Carousel = ({ items }) => {
   const { isMobile } = useBreakpoints();
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const minSwipeDistance = 100;
+  const minSwipeDistance = 50;
 
   const handleClickPrev = () => {
     if (activeIndex >= 1) {

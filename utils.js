@@ -5,9 +5,34 @@
  * @returns {string} A human-readable duration (e.g., "5 months", "3 years", "2 years 10 months")
  */
 export const calculateDuration = (startDate, endDate) => {
-  // Parse the dates
-  const start = new Date(startDate);
-  const end = endDate ? new Date(endDate) : new Date();
+  // Parse the dates more reliably
+  const parseDate = (dateStr) => {
+    if (!dateStr) return new Date();
+    
+    // Handle month names
+    const months = {
+      'January': 0, 'February': 1, 'March': 2, 'April': 3, 'May': 4, 'June': 5,
+      'July': 6, 'August': 7, 'September': 8, 'October': 9, 'November': 10, 'December': 11
+    };
+    
+    const parts = dateStr.split(' ');
+    if (parts.length === 2 && months[parts[0]] !== undefined) {
+      const month = months[parts[0]];
+      const year = parseInt(parts[1], 10);
+      return new Date(year, month, 1);
+    }
+    
+    // Fallback to standard parsing
+    return new Date(dateStr);
+  };
+  
+  const start = parseDate(startDate);
+  const end = parseDate(endDate);
+  
+  // Ensure we have valid dates
+  if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+    return "";
+  }
   
   // Calculate the difference in years and months
   let years = end.getFullYear() - start.getFullYear();
