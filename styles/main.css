@@ -4,7 +4,7 @@
   --blue: #43B1F8;
   --black: #000;
   --storm-dust: #616161;
-  --bunker: #2c2c2c;
+  --bunker: #1A1A1A;
   --white: #fff;
   --concrete: #f3f1f1;
   --gray: #B3B3B3;
@@ -19,6 +19,7 @@
   --paragraph-primary: var(--storm-dust);
   --paragraph-secondary: var(--black);
   --heading-secondary: var(--scooter);
+  --carousel-nav-bg: rgba(255, 255, 255, 0.8);
 }
 
 .dark {
@@ -29,6 +30,7 @@
   --secondary: var(--concrete);
   --paragraph-primary: var(--light-cream);
   --heading-secondary: var(--blue);
+  --carousel-nav-bg: rgba(26, 26, 26, 0.85);
 }
 
 .freeze-mode {
@@ -40,6 +42,7 @@
   --paragraph-primary: var(--storm-dust) !important;
   --paragraph-secondary: var(--black) !important;
   --heading-secondary: var(--scooter) !important;
+  --carousel-nav-bg: rgba(255, 255, 255, 0.8) !important;
 }
 
 html {

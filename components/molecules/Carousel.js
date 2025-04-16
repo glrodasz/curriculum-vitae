@@ -115,7 +115,7 @@ const Carousel = ({ items }) => {
           position: sticky;
           gap: 35px;
           top: 0;
-          background: rgba(255, 255, 255, 0.8);
+          background: var(--carousel-nav-bg);
           backdrop-filter: blur(10px);
           padding-bottom: 20px;
           z-index: 20;

@@ -16,7 +16,7 @@ const Hero = () => {
             <div className="wrapper">
               <div className="text">
                 <div className="logo">
-                  <Logo />
+                  <Logo shouldInvert="-light" />
                 </div>
                 <Heading size="sm">Hello,</Heading>
                 <div className="fullname">

@@ -5,12 +5,19 @@ import useTheme from "../../hooks/useTheme";
 const Logo = ({ 
   logoName = "guillermorodas", 
   maxWidth = 290, 
-  isCentered 
+  isCentered,
+  shouldInvert = false
 }) => {
   const { isDarkMode } = useTheme();
+
+  let logoSrc = logoName;
+  let invert = false;
   
-  // Determine which logo to use based on theme
-  const logoSrc = isDarkMode ? `${logoName}-light` : logoName;
+  if (typeof shouldInvert === 'string' && isDarkMode) {
+    logoSrc = `${logoName}${shouldInvert}`;
+  } else if (isDarkMode) {
+    invert = shouldInvert;
+  }
 
   return (
     <>
@@ -23,6 +30,7 @@ const Logo = ({
         height={120}
         alt={logoName}
         fetchpriority="high"
+        style={invert ? { filter: 'brightness(0) invert(1)' } : {}}
       ></Image>
       <style jsx>{`
         .logo {

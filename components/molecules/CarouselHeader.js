@@ -39,7 +39,7 @@ const CarouselHeader = ({ items, activeIndex, setActiveIndex }) => {
                 size="sm"
                 name={index === activeIndex ? "diamond" : "EMPTY"}
               />
-              <Heading size="xxs" isMarginless>
+              <Heading size="xxs" isMarginless freezeColor={true}>
                 {title}
               </Heading>
             </div>
@@ -68,6 +68,11 @@ const CarouselHeader = ({ items, activeIndex, setActiveIndex }) => {
 
         .tab:not(.is-active) {
           opacity: 0.5;
+        }
+
+        :global(.dark) .tab:not(.is-active) {
+          opacity: 1;
+          background: var(--light-cream);
         }
 
         .tab-title {
