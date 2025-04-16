@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isInverted, isJustified }) => {
+const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isInverted, isJustified, freezeColor = false }) => {
   return (
     <>
       <p
@@ -10,6 +10,7 @@ const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isI
           "is-marginless": isMarginless,
           "is-inverted": isInverted,
           "is-justified": isJustified,
+          "freeze-mode": freezeColor
         })}
       >
         {children}
@@ -23,11 +24,11 @@ const Paragraph = ({ children, size = "md", color = "primary", isMarginless, isI
         }
 
         .color-primary {
-          color: var(--storm-dust);
+          color: var(--paragraph-primary);
         }
 
         .color-secondary {
-          color: var(--bunker);
+          color: var(--paragraph-secondary);
         }
 
         .color-tertiary {

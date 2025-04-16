@@ -11,7 +11,7 @@ const Job = ({ career }) => {
     <>
       <div className="job">
         <div className="header">
-          <Logo logoName={career.logo} />
+          <Logo logoName={career.logo} shouldInvert={true} />
           <Link href={`https://${career.url}`} weight="normal">{career.url}</Link>
         </div>
         <div>

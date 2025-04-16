@@ -13,7 +13,10 @@ const Carousel = ({ items }) => {
   const { isMobile } = useBreakpoints();
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStartY, setTouchStartY] = useState(null);
+  const [touchEndY, setTouchEndY] = useState(null);
   const minSwipeDistance = 50;
+  const minSwipeRatio = 0.5; // Minimum ratio of horizontal to vertical movement
 
   const handleClickPrev = () => {
     if (activeIndex >= 1) {
@@ -33,25 +36,39 @@ const Carousel = ({ items }) => {
 
   const onTouchStart = (e) => {
     setTouchEnd(null);
+    setTouchEndY(null);
     setTouchStart(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
   };
 
   const onTouchMove = (e) => {
     setTouchEnd(e.targetTouches[0].clientX);
+    setTouchEndY(e.targetTouches[0].clientY);
   };
 
   const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (!touchStart || !touchEnd || !touchStartY || !touchEndY) return;
     
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
+    const distanceX = touchStart - touchEnd;
+    const distanceY = touchStartY - touchEndY;
     
-    if (isLeftSwipe) {
-      handleClickNext();
-    }
-    if (isRightSwipe) {
-      handleClickPrev();
+    // Calculate the absolute distances
+    const absDistanceX = Math.abs(distanceX);
+    const absDistanceY = Math.abs(distanceY);
+    
+    // Only process if horizontal movement is significant
+    if (absDistanceX < minSwipeDistance) return;
+    
+    // Calculate the ratio of horizontal to vertical movement
+    const ratio = absDistanceX / (absDistanceY || 1); // Avoid division by zero
+    
+    // If horizontal movement is significantly more than vertical, process the swipe
+    if (ratio > minSwipeRatio) {
+      if (distanceX > 0) {
+        handleClickNext();
+      } else {
+        handleClickPrev();
+      }
     }
   };
 
@@ -115,7 +132,7 @@ const Carousel = ({ items }) => {
           position: sticky;
           gap: 35px;
           top: 0;
-          background: rgba(255, 255, 255, 0.8);
+          background: var(--carousel-nav-bg);
           backdrop-filter: blur(10px);
           padding-bottom: 20px;
           z-index: 20;

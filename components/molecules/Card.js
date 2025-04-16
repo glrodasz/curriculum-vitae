@@ -12,7 +12,7 @@ const Card = ({ title, subtitle, items, isInverted }) => {
         })}
       >
         <header>
-          <Heading size="xs">{title}</Heading>
+          <Heading size="xs" freezeColor>{title}</Heading>
           <Paragraph color="secondary" isMarginless>{subtitle}</Paragraph>
         </header>
         <hr

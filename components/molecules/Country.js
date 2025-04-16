@@ -9,7 +9,7 @@ const Country = ({ flag, description }) => {
           <Image className="flag" src={`/flags/${flag}.svg`} alt={flag} height={55} width={55}/>
         </picture>
         <span className="description">
-          <Paragraph size="sm" isMarginless>
+          <Paragraph size="sm" isMarginless freezeColor={true}>
             {description}
           </Paragraph>
         </span>
@@ -28,7 +28,8 @@ const Country = ({ flag, description }) => {
           width: 55px;
           height: 55px;
           overflow: hidden;
-          border: 5px solid var(--white);
+          border: 3px solid var(--white);
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
         }
 
         picture > :global(img) {
@@ -43,6 +44,7 @@ const Country = ({ flag, description }) => {
           padding: 4px 19px;
           border-radius: 100px;
           width: max-content;
+          box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
         }
       `}</style>
     </>

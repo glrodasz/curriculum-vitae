@@ -5,8 +5,11 @@ import Logo from "../atoms/Logo";
 import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
 import Image from "next/image";
+import ThemeToggle from "../ThemeToggle";
+import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Hero = () => {
+  const { isMobile } = useBreakpoints();
   return (
     <>
       <header>
@@ -15,7 +18,7 @@ const Hero = () => {
             <div className="wrapper">
               <div className="text">
                 <div className="logo">
-                  <Logo />
+                  <Logo shouldInvert="-light" />
                 </div>
                 <Heading size="sm">Hello,</Heading>
                 <div className="fullname">
@@ -43,6 +46,11 @@ const Hero = () => {
                 priority
               />
             </div>
+            {!isMobile && (
+              <div className="theme-toggle-container">
+                <ThemeToggle />
+              </div>
+            )}
           </div>
         </PageContainer>
       </header>
@@ -73,8 +81,12 @@ const Hero = () => {
         .text {
           display: flex;
           flex-direction: column;
-          -webkit-text-stroke: 5px var(--white);
+          -webkit-text-stroke: 3px var(--text-inverted);
           paint-order: stroke fill;
+        }
+
+        .text :global(.freeze-mode) {
+          -webkit-text-stroke: 3px var(--text-inverted) !important;
         }
 
         .logo {
@@ -104,6 +116,13 @@ const Hero = () => {
           bottom: calc(var(--relocation-height) * -1);
           left: 0;
           right: 0;
+        }
+
+        .theme-toggle-container {
+          position: absolute;
+          top: 70px;
+          right: 112px;
+          z-index: 10;
         }
 
         @media (min-width: 1140px) {
@@ -152,7 +171,7 @@ const Hero = () => {
           }
 
           .fullname strong {
-            -webkit-text-stroke: 5px var(--black);
+            -webkit-text-stroke: 3px var(--black);
           }
 
           .relocation-container {

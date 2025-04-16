@@ -11,6 +11,7 @@ const Heading = ({
   isComfortable,
   isInverted,
   isInline,
+  freezeColor = false,
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ const Heading = ({
           "is-comfortable": isComfortable,
           "is-inverted": isInverted,
           "is-inline": isInline,
+          "freeze-mode": freezeColor,
         })}
       >
         {children}
@@ -37,11 +39,15 @@ const Heading = ({
         }
 
         .color-primary {
-          color: var(--black);
+          color: var(--text);
         }
 
         .color-secondary {
-          color: var(--scooter);
+          color: var(--heading-secondary);
+        }
+
+        .color-disabled {
+          color: var(--gray);
         }
 
         .is-inverted {
@@ -106,7 +112,8 @@ const Heading = ({
 
 Heading.propTypes = {
   size: PropTypes.oneOf(["xxs", "xs", "sm", "md", "lg"]),
-  color: PropTypes.oneOf(["primary", "secondary"]),
+  color: PropTypes.oneOf(["primary", "secondary", "disabled"]),
+  freezeColor: PropTypes.bool,
 };
 
 export default Heading;

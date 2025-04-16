@@ -18,6 +18,7 @@ const CarouselSubheader = ({
           isRounded
           isClickable
           onClick={handleClickPrev}
+          shouldInvert={true}
         />
         <Heading size="xs" isCentered isMarginless isComfortable>
           <strong>
@@ -29,6 +30,7 @@ const CarouselSubheader = ({
           isRounded
           isClickable
           onClick={handleClickNext}
+          shouldInvert={true}
         />
       </div>
       {items[activeIndex].heading && (
