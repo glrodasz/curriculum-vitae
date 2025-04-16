@@ -26,7 +26,7 @@ const Profile = () => {
                 title={language.title}
                 type="secondary"
                 text={language.proeficiency}
-                isSameLine
+                isSameLine={isMobile}
               />
             ))}
           </div>
@@ -55,7 +55,7 @@ const Profile = () => {
         @media (min-width: 1140px) {
           .languages {
             flex-direction: row;
-            grid-gap: 20px;
+            grid-gap: 30px;
           }
         }
       `}</style>

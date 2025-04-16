@@ -2,7 +2,7 @@ export const languages = [
   {
     title: "English",
     flag: "🇬🇧",
-    proeficiency: "Profesional working proficiency",
+    proeficiency: "Fluent",
   },
   {
     title: "Spanish",
