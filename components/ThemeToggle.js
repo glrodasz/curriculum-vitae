@@ -5,9 +5,39 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem('theme') === 'dark';
-    setIsDark(isDarkMode);
-    document.documentElement.classList.toggle('dark', isDarkMode);
+    // Check if user has a saved preference
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme) {
+      // Use saved preference if it exists
+      const isDarkMode = savedTheme === 'dark';
+      setIsDark(isDarkMode);
+      document.documentElement.classList.toggle('dark', isDarkMode);
+      // Add user-theme class to indicate user preference
+      document.documentElement.classList.add('user-theme');
+    } else {
+      // Otherwise use system preference
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setIsDark(prefersDarkMode);
+      document.documentElement.classList.toggle('dark', prefersDarkMode);
+      // Don't add user-theme class when using system preference
+      document.documentElement.classList.remove('user-theme');
+    }
+    
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e) => {
+      if (localStorage.getItem('theme') === null) {
+        const newTheme = e.matches;
+        setIsDark(newTheme);
+        document.documentElement.classList.toggle('dark', newTheme);
+        // Don't add user-theme class when using system preference
+        document.documentElement.classList.remove('user-theme');
+      }
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
   const toggleTheme = () => {
@@ -15,6 +45,8 @@ const ThemeToggle = () => {
     setIsDark(newTheme);
     localStorage.setItem('theme', newTheme ? 'dark' : 'light');
     document.documentElement.classList.toggle('dark', newTheme);
+    // Add user-theme class when user manually toggles theme
+    document.documentElement.classList.add('user-theme');
   };
 
   return (

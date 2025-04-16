@@ -1,0 +1,77 @@
+:root {
+	--golden-yellow: #f7df1d;
+	--scooter: #36b7c9;
+	--blue: #43B1F8;
+	--black: #000;
+	--storm-dust: #616161;
+	--bunker: #1A1A1A;
+	--white: #fff;
+	--concrete: #f3f1f1;
+	--gray: #B3B3B3;
+	--light-cream: #FEFADF;
+	
+	/* Theme variables */
+	--background: var(--white);
+	--text: var(--black);
+	--text-inverted: var(--white);
+	--primary: var(--scooter);
+	--secondary: var(--storm-dust);
+	--paragraph-primary: var(--storm-dust);
+	--paragraph-secondary: var(--black);
+	--heading-secondary: var(--scooter);
+	--carousel-nav-bg: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Apply dark theme based on system preferences */
+  @media (prefers-color-scheme: dark) {
+    :root:not(.freeze-mode):not(.user-theme) {
+      --background: var(--bunker);
+      --text: var(--white);
+      --text-inverted: var(--black);
+      --primary: var(--light-cream);
+      --secondary: var(--concrete);
+      --paragraph-primary: var(--light-cream);
+      --paragraph-secondary: var(--black);
+      --heading-secondary: var(--blue);
+      --carousel-nav-bg: rgba(26, 26, 26, 0.85);
+    }
+  }
+  
+  /* User preference (from localStorage) takes precedence */
+  :root.dark {
+	--background: var(--bunker);
+	--text: var(--white);
+	--text-inverted: var(--black);
+	--primary: var(--light-cream);
+	--secondary: var(--concrete);
+	--paragraph-primary: var(--light-cream);
+	--heading-secondary: var(--blue);
+	--carousel-nav-bg: rgba(26, 26, 26, 0.85);
+  }
+  
+  .freeze-mode {
+	--background: var(--white) !important;
+	--text: var(--black) !important;
+	--text-inverted: var(--white) !important;
+	--primary: var(--scooter) !important;
+	--secondary: var(--storm-dust) !important;
+	--paragraph-primary: var(--storm-dust) !important;
+	--paragraph-secondary: var(--black) !important;
+	--heading-secondary: var(--scooter) !important;
+	--carousel-nav-bg: rgba(255, 255, 255, 0.8) !important;
+  }
+  
+  html {
+	font-size: 12px;
+  }
+  
+  html, body, #__next {
+	height: 100%;
+  }
+  
+  body {
+	background-color: var(--background);
+	color: var(--text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
