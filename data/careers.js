@@ -1,8 +1,6 @@
-const currentYear = new Date().getFullYear();
-
 export const careers = [
   {
-    date: currentYear,
+    date: null,
     startDate: "August 2021",
     endDate: null,
     company: "EQT Group",
@@ -19,7 +17,7 @@ export const careers = [
   },
   {
     date: "2019",
-    startDate: "August 2019",
+    startDate: "September 2019",
     endDate: "August 2021",
     company: "Klarna",
     url: "www.klarna.com",
@@ -35,7 +33,7 @@ export const careers = [
   {
     date: "2016",
     startDate: "October 2016",
-    endDate: "August 2019",
+    endDate: "September 2019",
     company: "Auth0",
     url: "www.auth0.com",
     logo: "auth0",
