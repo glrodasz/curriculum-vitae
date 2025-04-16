@@ -45,6 +45,7 @@ const Hero = () => {
           height: auto;
           min-height: var(--header-mobile-min-height);
           margin-bottom: var(--relocation-height);
+          box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
         }
 
         .container {
