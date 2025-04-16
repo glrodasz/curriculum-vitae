@@ -19,7 +19,7 @@ const CarouselSubheader = ({
           isClickable
           onClick={handleClickPrev}
         />
-        <Heading size="sm" isCentered isMarginless isComfortable>
+        <Heading size="xs" isCentered isMarginless isComfortable>
           <strong>
             {items[activeIndex].subtitle || items[activeIndex].title}
           </strong>

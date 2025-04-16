@@ -4,6 +4,7 @@ import Heading from "../atoms/Heading";
 import Logo from "../atoms/Logo";
 import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -32,7 +33,16 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            <img className="photo" src="/images/guillermo-rodas.png" />
+            <div className="photo-container">
+              <Image 
+                className="photo" 
+                src="/images/guillermo-rodas.png" 
+                alt="Guillermo Rodas"
+                width={800}
+                height={800}
+                priority
+              />
+            </div>
           </div>
         </PageContainer>
       </header>
@@ -71,6 +81,12 @@ const Hero = () => {
           display: flex;
           justify-content: center;
           margin: 20px auto;
+        }
+
+        .photo-container {
+          width: 100%;
+          display: flex;
+          justify-content: center;
         }
 
         .photo {

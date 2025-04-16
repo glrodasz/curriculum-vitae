@@ -1,7 +1,11 @@
 import classNames from "classnames";
 import Image from "next/image";
 
-const Logo = ({ logoName, maxWidth, isCentered }) => {
+const Logo = ({ 
+  logoName = "guillermorodas", 
+  maxWidth = 290, 
+  isCentered 
+}) => {
   return (
     <>
       <Image
@@ -12,6 +16,7 @@ const Logo = ({ logoName, maxWidth, isCentered }) => {
         width={maxWidth}
         height={120}
         alt={logoName}
+        fetchpriority="high"
       ></Image>
       <style jsx>{`
         .logo {
@@ -26,11 +31,6 @@ const Logo = ({ logoName, maxWidth, isCentered }) => {
       `}</style>
     </>
   );
-};
-
-Logo.defaultProps = {
-  logoName: "guillermorodas",
-  maxWidth: 290,
 };
 
 export default Logo;

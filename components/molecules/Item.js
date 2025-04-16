@@ -32,7 +32,7 @@ const Paragraphs = ({ text }) => {
   return <Paragraph isMarginless>{text}</Paragraph>;
 };
 
-const Item = ({ icon, flag, title, type, text, footer, isSameLine }) => {
+const Item = ({ icon, flag, title, type = "primary", text, footer, isSameLine }) => {
   return (
     <>
       <div className="item">
@@ -43,7 +43,7 @@ const Item = ({ icon, flag, title, type, text, footer, isSameLine }) => {
             })}
           >
             {icon && <Icon size="md" name={icon} />}
-            <Heading size="sm" isMarginless>
+            <Heading size="xs" isMarginless>
               {flag}
             </Heading>
           </div>
@@ -99,10 +99,6 @@ Item.propTypes = {
   icon: PropTypes.string,
   flag: PropTypes.string,
   type: PropTypes.oneOf(["primary", "secondary"]),
-};
-
-Item.defaultProps = {
-  type: "primary",
 };
 
 export default Item;

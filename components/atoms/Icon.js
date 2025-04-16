@@ -8,12 +8,12 @@ const sizeMap = {
 };
 
 const Icon = ({
-  size,
-  name,
+  size = "md",
+  name = "EMPTY",
   isRounded,
   isClickable,
   hasBackground,
-  onClick,
+  onClick = () => {},
 }) => {
   const mappedSize = sizeMap[size];
   const squareStyles = { width: mappedSize, minWidth: mappedSize, height: mappedSize };
@@ -65,11 +65,6 @@ const Icon = ({
       `}</style>
     </div>
   );
-};
-
-Icon.defaultProps = {
-  size: "md",
-  onClick: () => {},
 };
 
 export default Icon;

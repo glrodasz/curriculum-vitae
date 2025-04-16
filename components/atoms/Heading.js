@@ -3,8 +3,8 @@ import classNames from "classnames";
 
 const Heading = ({
   children,
-  size,
-  color,
+  size = "lg",
+  color = "primary",
   weight = "bold",
   isCentered,
   isMarginless,
@@ -104,14 +104,9 @@ const Heading = ({
   );
 };
 
-Heading.proptTypes = {
-  size: PropTypes.oneOf(["xxs", "xs", "md", "lg"]),
+Heading.propTypes = {
+  size: PropTypes.oneOf(["xxs", "xs", "sm", "md", "lg"]),
   color: PropTypes.oneOf(["primary", "secondary"]),
-};
-
-Heading.defaultProps = {
-  size: "lg",
-  color: "primary",
 };
 
 export default Heading;

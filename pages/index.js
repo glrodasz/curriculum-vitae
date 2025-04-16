@@ -14,11 +14,6 @@ const index = () => {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
-          rel="stylesheet"
-        />
-
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
