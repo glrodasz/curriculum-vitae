@@ -6,8 +6,10 @@ import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
 import Image from "next/image";
 import ThemeToggle from "../ThemeToggle";
+import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Hero = () => {
+  const { isMobile } = useBreakpoints();
   return (
     <>
       <header>
@@ -44,9 +46,11 @@ const Hero = () => {
                 priority
               />
             </div>
-            <div className="theme-toggle-container">
-              <ThemeToggle />
-            </div>
+            {!isMobile && (
+              <div className="theme-toggle-container">
+                <ThemeToggle />
+              </div>
+            )}
           </div>
         </PageContainer>
       </header>
