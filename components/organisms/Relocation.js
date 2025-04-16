@@ -25,8 +25,6 @@ const Relocation = ({}) => {
         .connector-icon {
           position: relative;
           top: -20px;
-          background: var(--white);
-          border: 5px solid var(--white);
         }
 
         .divider {

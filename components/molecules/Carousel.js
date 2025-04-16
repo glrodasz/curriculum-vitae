@@ -11,6 +11,9 @@ const Carousel = ({ items }) => {
   const carouselNavRef = useRef(null);
   const lastItemIndex = items.length - 1;
   const { isMobile } = useBreakpoints();
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const minSwipeDistance = 50;
 
   const handleClickPrev = () => {
     if (activeIndex >= 1) {
@@ -28,6 +31,30 @@ const Carousel = ({ items }) => {
     }
   };
 
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      handleClickNext();
+    }
+    if (isRightSwipe) {
+      handleClickPrev();
+    }
+  };
+
   useEffect(() => {
     if (contentRef.current && isMobile) {
       contentRef.current.scrollIntoView({
@@ -39,7 +66,12 @@ const Carousel = ({ items }) => {
 
   return (
     <>
-      <div className="carousel">
+      <div 
+        className="carousel"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <div className="carousel-nav" ref={carouselNavRef}>
           <CarouselHeader
             items={items}
@@ -74,6 +106,7 @@ const Carousel = ({ items }) => {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
+          touch-action: pan-y pinch-zoom;
         }
 
         .carousel-nav {
