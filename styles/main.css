@@ -6,6 +6,20 @@
   --bunker: #2c2c2c;
   --white: #fff;
   --concrete: #f3f1f1;
+  --gray: #B3B3B3;
+  
+  /* Theme variables */
+  --background: var(--white);
+  --text: var(--black);
+  --primary: var(--scooter);
+  --secondary: var(--storm-dust);
+}
+
+.dark {
+  --background: var(--bunker);
+  --text: var(--white);
+  --primary: var(--scooter);
+  --secondary: var(--concrete);
 }
 
 html {
@@ -14,4 +28,10 @@ html {
 
 html, body, #__next {
   height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

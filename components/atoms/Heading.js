@@ -44,6 +44,10 @@ const Heading = ({
           color: var(--scooter);
         }
 
+        .color-disabled {
+          color: var(--gray);
+        }
+
         .is-inverted {
           color: var(--white);
         }
@@ -106,7 +110,7 @@ const Heading = ({
 
 Heading.propTypes = {
   size: PropTypes.oneOf(["xxs", "xs", "sm", "md", "lg"]),
-  color: PropTypes.oneOf(["primary", "secondary"]),
+  color: PropTypes.oneOf(["primary", "secondary", "disabled"]),
 };
 
 export default Heading;

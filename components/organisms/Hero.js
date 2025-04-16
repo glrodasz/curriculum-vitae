@@ -5,6 +5,7 @@ import Logo from "../atoms/Logo";
 import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
 import Image from "next/image";
+import ThemeToggle from "../ThemeToggle";
 
 const Hero = () => {
   return (
@@ -42,6 +43,9 @@ const Hero = () => {
                 height={800}
                 priority
               />
+            </div>
+            <div className="theme-toggle-container">
+              <ThemeToggle />
             </div>
           </div>
         </PageContainer>
@@ -104,6 +108,13 @@ const Hero = () => {
           bottom: calc(var(--relocation-height) * -1);
           left: 0;
           right: 0;
+        }
+
+        .theme-toggle-container {
+          position: absolute;
+          top: 70px;
+          right: 112px;
+          z-index: 10;
         }
 
         @media (min-width: 1140px) {
