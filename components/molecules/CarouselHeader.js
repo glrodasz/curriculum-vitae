@@ -1,14 +1,36 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Heading from "../atoms/Heading";
 import Icon from "../atoms/Icon";
 
 const CarouselHeader = ({ items, activeIndex, setActiveIndex }) => {
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      const activeTab = headerRef.current.querySelector(`[data-index="${activeIndex}"]`);
+      if (activeTab) {
+        // Calculate the scroll position to center the active tab
+        const headerWidth = headerRef.current.clientWidth;
+        const tabLeft = activeTab.offsetLeft;
+        const tabWidth = activeTab.offsetWidth;
+        const scrollLeft = tabLeft - (headerWidth / 2) + (tabWidth / 2);
+        
+        // Smoothly scroll to the calculated position
+        headerRef.current.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }, [activeIndex]);
+
   return (
     <>
-      <div className="header">
+      <div className="header" ref={headerRef}>
         {items.map(({ title }, index) => (
           <div
             key={title}
+            data-index={index}
             className={`tab ${index === activeIndex ? "is-active" : ""}`}
             onClick={() => setActiveIndex(index)}
           >
