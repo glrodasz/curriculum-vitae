@@ -28,7 +28,7 @@ const Country = ({ flag, description }) => {
           width: 55px;
           height: 55px;
           overflow: hidden;
-          border: 5px solid var(--white);
+          border: 3px solid var(--white);
         }
 
         picture > :global(img) {

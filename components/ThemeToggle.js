@@ -31,7 +31,8 @@ const ThemeToggle = () => {
           isMarginless 
           isInline
           weight={"bold"}
-		  color={isDark ? "disabled" : "primary"}
+          color={isDark ? "disabled" : "primary"}
+          freezeColor={true}
         >
           Light
         </Heading>
@@ -43,7 +44,8 @@ const ThemeToggle = () => {
           isMarginless 
           isInline
           weight={"bold"}
-		  color={isDark ? "primary" : "disabled"}
+          color={isDark ? "primary" : "disabled"}
+          freezeColor={true}
         >
           Dark
         </Heading>

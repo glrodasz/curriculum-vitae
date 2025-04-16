@@ -11,6 +11,7 @@ const Heading = ({
   isComfortable,
   isInverted,
   isInline,
+  freezeColor = false,
 }) => {
   return (
     <>
@@ -21,6 +22,7 @@ const Heading = ({
           "is-comfortable": isComfortable,
           "is-inverted": isInverted,
           "is-inline": isInline,
+          "freeze-color": freezeColor,
         })}
       >
         {children}
@@ -41,7 +43,7 @@ const Heading = ({
         }
 
         .color-secondary {
-          color: var(--scooter);
+          color: var(--heading-secondary);
         }
 
         .color-disabled {
@@ -97,6 +99,24 @@ const Heading = ({
           font-weight: bold;
         }
 
+        /* These specific classes will only apply when freezeColor is true */
+        .freeze-color.color-primary {
+          color: var(--text) !important;
+        }
+
+        .freeze-color.color-secondary {
+          color: var(--heading-secondary) !important;
+        }
+
+        .freeze-color.color-disabled {
+          color: var(--gray) !important;
+        }
+
+        /* Special case for dark mode with freezeColor */
+        :global(.dark) .freeze-color.color-primary {
+          color: var(--black) !important;
+        }
+
         @media (min-width: 1140px) {
           .heading :global(strong.shadow) {
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2),
@@ -111,6 +131,7 @@ const Heading = ({
 Heading.propTypes = {
   size: PropTypes.oneOf(["xxs", "xs", "sm", "md", "lg"]),
   color: PropTypes.oneOf(["primary", "secondary", "disabled"]),
+  freezeColor: PropTypes.bool,
 };
 
 export default Heading;

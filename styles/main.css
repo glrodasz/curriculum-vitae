@@ -1,6 +1,7 @@
 :root {
   --golden-yellow: #f7df1d;
   --scooter: #36b7c9;
+  --blue: #43B1F8;
   --black: #000;
   --storm-dust: #616161;
   --bunker: #2c2c2c;
@@ -16,7 +17,8 @@
   --primary: var(--scooter);
   --secondary: var(--storm-dust);
   --paragraph-primary: var(--storm-dust);
-  --paragraph-secondary: var(--scooter);
+  --paragraph-secondary: var(--black);
+  --heading-secondary: var(--scooter);
 }
 
 .dark {
@@ -26,7 +28,7 @@
   --primary: var(--light-cream);
   --secondary: var(--concrete);
   --paragraph-primary: var(--light-cream);
-  --paragraph-secondary: var(--scooter);
+  --heading-secondary: var(--blue);
 }
 
 html {
