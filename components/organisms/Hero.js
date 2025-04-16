@@ -81,6 +81,10 @@ const Hero = () => {
           paint-order: stroke fill;
         }
 
+        .text :global(.freeze-mode) {
+          -webkit-text-stroke: 3px var(--text-inverted) !important;
+        }
+
         .logo {
           display: flex;
           justify-content: center;

@@ -31,6 +31,17 @@
   --heading-secondary: var(--blue);
 }
 
+.freeze-mode {
+  --background: var(--white) !important;
+  --text: var(--black) !important;
+  --text-inverted: var(--white) !important;
+  --primary: var(--scooter) !important;
+  --secondary: var(--storm-dust) !important;
+  --paragraph-primary: var(--storm-dust) !important;
+  --paragraph-secondary: var(--black) !important;
+  --heading-secondary: var(--scooter) !important;
+}
+
 html {
   font-size: 12px;
 }

@@ -22,7 +22,7 @@ const Heading = ({
           "is-comfortable": isComfortable,
           "is-inverted": isInverted,
           "is-inline": isInline,
-          "freeze-color": freezeColor,
+          "freeze-mode": freezeColor,
         })}
       >
         {children}
@@ -97,24 +97,6 @@ const Heading = ({
 
         .weight-bold {
           font-weight: bold;
-        }
-
-        /* These specific classes will only apply when freezeColor is true */
-        .freeze-color.color-primary {
-          color: var(--text) !important;
-        }
-
-        .freeze-color.color-secondary {
-          color: var(--heading-secondary) !important;
-        }
-
-        .freeze-color.color-disabled {
-          color: var(--gray) !important;
-        }
-
-        /* Special case for dark mode with freezeColor */
-        :global(.dark) .freeze-color.color-primary {
-          color: var(--black) !important;
         }
 
         @media (min-width: 1140px) {
