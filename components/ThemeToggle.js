@@ -73,6 +73,7 @@ const ThemeToggle = () => {
           padding: 2px;
           position: relative;
           transition: background-color 0.3s ease;
+          transform: translateY(2px);
         }
 
         .switch-handle {
@@ -83,11 +84,29 @@ const ThemeToggle = () => {
           position: absolute;
           left: 3px;
 		  top: 3px;
+          transition: all 0.3s ease;
+        }
+
+        .switch-handle::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 3px;
+          width: 12px;
+          height: 12px;
+          background-color: var(--black);
+          border-radius: 50%;
           transition: transform 0.3s ease;
+          transform: scale(0);
         }
 
         :global(.dark) .switch-handle {
           transform: translateX(14px);
+          background-color: var(--golden-yellow);
+        }
+
+        :global(.dark) .switch-handle::after {
+          transform: scale(1) translateX(-8px);
         }
       `}</style>
     </>
