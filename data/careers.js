@@ -24,7 +24,7 @@ export const careers = [
     logo: "klarna",
     about:
       "Klarna is an e-commerce payment solutions platform for merchants and shoppers.",
-    functions: "Engineer.",
+    functions: "Engineer",
     achievements: [
       "As a member of the foundations team, my role involved creating the main user interface pacakges,employing microfrontends,that were used by various teams.",
       "Additionally, Iworked on improving and expanding the continuous delivery process, which wasa crucial aspect of our team's work.",
@@ -39,7 +39,7 @@ export const careers = [
     logo: "auth0",
     about:
       "Auth0 is a cloud identity management SAAS application for the web, mobile, IoT, and internal software.",
-    functions: "Engineer.",
+    functions: "Engineer",
     achievements: [
       "I was involved in the development of several internal products utilizing Hapi.js, MongoDB, React, and Redux technologies.",
       "Additionally, I enhanced our team's development process by integrating tools such as Storybook and Snapshot testing.",
@@ -54,7 +54,7 @@ export const careers = [
     logo: "huge",
     about:
       "Huge redefines what's possible for the world's most ambitious brands.",
-    functions: "Web Engineer.",
+    functions: "Web Engineer",
     achievements: [
       "I contributed to the development of a Fintech web app, harnessing the power of React and Redux. This app was finely tuned for compatibility across various browsers and mobile devices.",
       "I crafted web applications with Vanilla JavaScript, ensuring they seamlessly worked across diverse browsers and devices, including the likes of IE10 on Windows and Safari on the iPhone 4S.",
