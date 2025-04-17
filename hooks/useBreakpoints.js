@@ -10,7 +10,7 @@ const queries = [
 const useBreakpoints = () => {
   const [breakpoints, setBreakpoints] = useState({
     isDesktop: false,
-    isMobile: false,
+    isMobile: true,
   })
 
   useEffect(() => {

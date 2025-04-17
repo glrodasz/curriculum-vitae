@@ -5,14 +5,17 @@ import { useState, useEffect } from 'react';
  * @returns {Object} Theme state and toggle function
  */
 const useTheme = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    return false;
+  });
 
   useEffect(() => {
-    // Check initial theme
     const isDark = document.documentElement.classList.contains('dark');
     setIsDarkMode(isDark);
     
-    // Listen for theme changes
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.attributeName === 'class') {

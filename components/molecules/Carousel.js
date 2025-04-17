@@ -3,20 +3,18 @@ import classNames from "classnames";
 
 import CarouselHeader from "./CarouselHeader";
 import CarouselSubheader from "./CarouselSubheader";
-import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Carousel = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const contentRef = useRef(null);
   const carouselNavRef = useRef(null);
   const lastItemIndex = items.length - 1;
-  const { isMobile } = useBreakpoints();
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const [touchStartY, setTouchStartY] = useState(null);
   const [touchEndY, setTouchEndY] = useState(null);
   const minSwipeDistance = 50;
-  const minSwipeRatio = 0.5; // Minimum ratio of horizontal to vertical movement
+  const minSwipeRatio = 0.5;
 
   const handleClickPrev = () => {
     if (activeIndex >= 1) {
@@ -71,15 +69,6 @@ const Carousel = ({ items }) => {
       }
     }
   };
-
-  useEffect(() => {
-    if (contentRef.current && isMobile) {
-      contentRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [activeIndex]);
 
   return (
     <>
