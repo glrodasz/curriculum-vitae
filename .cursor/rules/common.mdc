@@ -1,0 +1,16 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# JavaScript
+- The project is using Next 14 using the `Pages` router
+- The project is written in plain JavaScipt NOT Typescript
+- .js extension is prefered over .jsx
+- We prefer do our own utils and components over install new libraries
+- React hooks are located in `hooks` folder
+
+# Styles
+- We are using styled-jsx in this project
+- We prefer use CSS custom properties for the CSS variables
+- We are using the Atomic Design approach inside `components` folder
