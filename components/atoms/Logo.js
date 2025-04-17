@@ -33,9 +33,10 @@ const Logo = ({
         style={invert ? { filter: 'brightness(0) invert(1)' } : {}}
       ></Image>
       <style jsx>{`
-        .logo {
+        :global(.logo) {
           width: 100%;
           max-width: ${maxWidth}px;
+          filter: drop-shadow(0 0 1px var(--logo-shadow));
         }
 
         .is-centered {

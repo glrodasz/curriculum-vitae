@@ -20,6 +20,7 @@
 	--paragraph-secondary: var(--black);
 	--heading-secondary: var(--scooter);
 	--carousel-nav-bg: rgba(255, 255, 255, 0.8);
+  --logo-shadow: rgba(255, 255, 255, 0.9);
   }
   
   /* SASS mixins for theme variables */
@@ -33,6 +34,7 @@
     --paragraph-secondary: var(--black);
     --heading-secondary: var(--blue);
     --carousel-nav-bg: rgba(26, 26, 26, 0.85);
+    --logo-shadow: rgba(0, 0, 0, 0.9);
   }
   
   @mixin light-theme {

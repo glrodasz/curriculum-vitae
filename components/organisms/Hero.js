@@ -120,7 +120,7 @@ const Hero = () => {
         .theme-toggle-container {
           position: absolute;
           top: 70px;
-          right: 112px;
+          right: 5%;
           z-index: 10;
         }
 
