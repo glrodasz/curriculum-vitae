@@ -123,7 +123,9 @@ const Carousel = ({ items }) => {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
-          touch-action: pan-y pinch-zoom;
+          touch-action: pan-y;
+          width: 100%;
+          min-height: 100%;
         }
 
         .carousel-nav {
