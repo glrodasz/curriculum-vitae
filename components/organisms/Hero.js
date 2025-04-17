@@ -10,6 +10,7 @@ import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Hero = () => {
   const { isMobile } = useBreakpoints();
+
   return (
     <>
       <header>
@@ -46,11 +47,9 @@ const Hero = () => {
                 priority
               />
             </div>
-            {!isMobile && (
-              <div className="theme-toggle-container">
-                <ThemeToggle />
-              </div>
-            )}
+            <div className="theme-toggle-container">
+              <ThemeToggle isHidden={isMobile} />
+            </div>
           </div>
         </PageContainer>
       </header>

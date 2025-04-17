@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Heading from './atoms/Heading';
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ isHidden = true }) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ const ThemeToggle = () => {
     <>
       <button 
         onClick={toggleTheme}
-        className="toggle-container"
+        className={`toggle-container ${isHidden ? 'hidden' : ''}`}
         aria-label="Toggle theme"
         role="switch"
         aria-checked={isDark}
@@ -93,6 +93,10 @@ const ThemeToggle = () => {
           cursor: pointer;
           transition: background-color 0.2s ease;
 		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-container.hidden {
+          display: none;
         }
 
         .toggle-container:hover {
