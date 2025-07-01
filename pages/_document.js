@@ -8,6 +8,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
         />
+        <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
       </Head>
       <body>
         <Main />
