@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import Analytics from '../components/atoms/Analytics'
 
 export default function Document() {
   return (
@@ -8,7 +9,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
         />
-        <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+        <Analytics />
       </Head>
       <body>
         <Main />
