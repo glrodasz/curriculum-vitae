@@ -5,7 +5,7 @@ import Logo from "../atoms/Logo";
 import Paragraph from "../atoms/Paragraph";
 import Relocation from "./Relocation";
 import Image from "next/image";
-import ThemeToggle from "../ThemeToggle";
+import ThemeToggle from "../molecules/ThemeToggle";
 import useBreakpoints from "../../hooks/useBreakpoints";
 
 const Hero = () => {
