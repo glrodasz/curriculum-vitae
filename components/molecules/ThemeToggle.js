@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Heading from './atoms/Heading';
+import Heading from '../atoms/Heading';
 
 const ThemeToggle = ({ isHidden = true }) => {
   const [isDark, setIsDark] = useState(false);
