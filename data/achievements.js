@@ -24,7 +24,11 @@ export const achievements = [
       {
         title: "Online Teacher",
         text: [
+          // Curso avanzado de Express.js and Curso de autenticación con OAuth 2.0
+          // Escuela de JavaScript: Curso de Backend con Node.js y Curso de Autenticación con Passport.js
+          // Curso de OAuth 2.0 y OpenID Connect y Curso de Auth0
           ["Platzi", "December 2018, July 2019, March 2023"],
+          // Curso de Node.js
           ["Código Facilito", "September 2023"],
         ],
       },
@@ -40,6 +44,10 @@ export const achievements = [
       {
         title: "Bootcamp Instructor",
         text: [
+          // Bootcamp de JavaScript
+          // Bootcamp de React Avanzo con Next.js
+          // Bootcamp de Diseño, Interfaces y CSS para Frontends
+          ["Código Facilito", "October 2022, February 2023, March 2024"],
           ["Undefined Academy", "March 2023 - October 2023"],
           ["Platzi Master", "November 2020 - September 2022"],
           ["World Tech Makers", "June 2017 - August 2017"],
@@ -58,6 +66,11 @@ export const achievements = [
   {
     title: "Podcasts",
     items: [
+      {
+        title: "AI and Humans: Invincible Innovation",
+        text: "Staying Ahead in AI: Practical Insights for Developers",
+        footer: "April 2025",
+      },
       {
         title: "freeCodeCamp en Español",
         text: "From Java to JavaScript",
