@@ -69,13 +69,28 @@
 	font-size: 12px;
   }
   
-  html, body, #__next {
-	height: 100%;
+  html, #__next {
+	  height: 100%;
   }
   
   body {
-	background-color: var(--background);
-	color: var(--text);
-	transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    background-color: var(--background);
+    color: var(--text);
+  }
+
+  body.footer-visible {
+	  background-color: var(--black);
+  }
+
+  body.footer-visible::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--background);
+    z-index: -1;
   }
   

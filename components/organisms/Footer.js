@@ -77,15 +77,14 @@ const Footer = () => {
         }
 
         .logo {
-          height: 250px;
-          object-fit: contain;
-          object-position: center 100px;
+          display: none;
         }
 
         .footer {
           display: flex;
           flex-direction: column;
           align-items: center;
+          padding-bottom: 50px;
         }
 
         .icon-list {
@@ -121,6 +120,7 @@ const Footer = () => {
           .footer {
             align-items: flex-start;
             grid-column: 2/3;
+            padding-bottom: 0;
           }
 
           .social-networks {
@@ -128,6 +128,7 @@ const Footer = () => {
           }
 
           .logo {
+            display: block;
             height: 100%;
             object-fit: contain;
             object-position: center 150px;
