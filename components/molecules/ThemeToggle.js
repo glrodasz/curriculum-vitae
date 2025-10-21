@@ -1,67 +1,30 @@
 import { useState, useEffect } from 'react';
 import Heading from '../atoms/Heading';
-import { updateManifestTheme } from '../../utils/manifest';
+import { initializeTheme, toggleTheme, createSystemThemeListener } from '../../utils/theme';
 
 const ThemeToggle = ({ isHidden = true }) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check if user has a saved preference
-    const savedTheme = localStorage.getItem('theme');
-    
-    if (savedTheme) {
-      // Use saved preference if it exists
-      const isDarkMode = savedTheme === 'dark';
-      setIsDark(isDarkMode);
-      document.documentElement.classList.toggle('dark', isDarkMode);
-      // Add user-theme class to indicate user preference
-      document.documentElement.classList.add('user-theme');
-      // Update manifest theme colors
-      updateManifestTheme(isDarkMode);
-    } else {
-      // Otherwise use system preference
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setIsDark(prefersDarkMode);
-      document.documentElement.classList.toggle('dark', prefersDarkMode);
-      // Don't add user-theme class when using system preference
-      document.documentElement.classList.remove('user-theme');
-      // Update manifest theme colors
-      updateManifestTheme(prefersDarkMode);
-    }
-    
+    // Initialize theme and get initial state
+    const initialTheme = initializeTheme();
+    setIsDark(initialTheme);
+
     // Listen for system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e) => {
-      if (localStorage.getItem('theme') === null) {
-        const newTheme = e.matches;
-        setIsDark(newTheme);
-        document.documentElement.classList.toggle('dark', newTheme);
-        // Don't add user-theme class when using system preference
-        document.documentElement.classList.remove('user-theme');
-        // Update manifest theme colors
-        updateManifestTheme(newTheme);
-      }
-    };
-    
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
+    const cleanup = createSystemThemeListener(setIsDark);
+
+    return cleanup;
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = !isDark;
+  const handleToggle = () => {
+    const newTheme = toggleTheme(isDark);
     setIsDark(newTheme);
-    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
-    document.documentElement.classList.toggle('dark', newTheme);
-    // Add user-theme class when user manually toggles theme
-    document.documentElement.classList.add('user-theme');
-    // Update manifest theme colors
-    updateManifestTheme(newTheme);
   };
 
   return (
     <>
-      <button 
-        onClick={toggleTheme}
+      <button
+        onClick={handleToggle}
         className={`toggle-container ${isHidden ? 'hidden' : ''}`}
         aria-label="Toggle theme"
         role="switch"
