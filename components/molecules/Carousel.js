@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import classNames from "classnames";
+import { useSwipeable } from "react-swipeable";
 
 import CarouselHeader from "./CarouselHeader";
 import CarouselSubheader from "./CarouselSubheader";
@@ -9,12 +10,7 @@ const Carousel = ({ items }) => {
   const contentRef = useRef(null);
   const carouselNavRef = useRef(null);
   const lastItemIndex = items.length - 1;
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
-  const [touchStartY, setTouchStartY] = useState(null);
-  const [touchEndY, setTouchEndY] = useState(null);
   const minSwipeDistance = 50;
-  const minSwipeRatio = 0.5;
 
   const handleClickPrev = () => {
     if (activeIndex >= 1) {
@@ -32,51 +28,20 @@ const Carousel = ({ items }) => {
     }
   };
 
-  const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchEndY(null);
-    setTouchStart(e.targetTouches[0].clientX);
-    setTouchStartY(e.targetTouches[0].clientY);
-  };
-
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-    setTouchEndY(e.targetTouches[0].clientY);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd || !touchStartY || !touchEndY) return;
-    
-    const distanceX = touchStart - touchEnd;
-    const distanceY = touchStartY - touchEndY;
-    
-    // Calculate the absolute distances
-    const absDistanceX = Math.abs(distanceX);
-    const absDistanceY = Math.abs(distanceY);
-    
-    // Only process if horizontal movement is significant
-    if (absDistanceX < minSwipeDistance) return;
-    
-    // Calculate the ratio of horizontal to vertical movement
-    const ratio = absDistanceX / (absDistanceY || 1); // Avoid division by zero
-    
-    // If horizontal movement is significantly more than vertical, process the swipe
-    if (ratio > minSwipeRatio) {
-      if (distanceX > 0) {
-        handleClickNext();
-      } else {
-        handleClickPrev();
-      }
-    }
-  };
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleClickNext(),
+    onSwipedRight: () => handleClickPrev(),
+    delta: minSwipeDistance,
+    preventScrollOnSwipe: true,
+    trackMouse: false,
+    trackTouch: true,
+  });
 
   return (
     <>
-      <div 
+      <div
+        {...swipeHandlers}
         className="carousel"
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
       >
         <div className="carousel-nav" ref={carouselNavRef}>
           <CarouselHeader
