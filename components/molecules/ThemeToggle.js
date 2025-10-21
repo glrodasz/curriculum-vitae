@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Heading from '../atoms/Heading';
+import { updateManifestTheme } from '../../utils/manifest';
 
 const ThemeToggle = ({ isHidden = true }) => {
   const [isDark, setIsDark] = useState(false);
@@ -15,6 +16,8 @@ const ThemeToggle = ({ isHidden = true }) => {
       document.documentElement.classList.toggle('dark', isDarkMode);
       // Add user-theme class to indicate user preference
       document.documentElement.classList.add('user-theme');
+      // Update manifest theme colors
+      updateManifestTheme(isDarkMode);
     } else {
       // Otherwise use system preference
       const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -22,6 +25,8 @@ const ThemeToggle = ({ isHidden = true }) => {
       document.documentElement.classList.toggle('dark', prefersDarkMode);
       // Don't add user-theme class when using system preference
       document.documentElement.classList.remove('user-theme');
+      // Update manifest theme colors
+      updateManifestTheme(prefersDarkMode);
     }
     
     // Listen for system theme changes
@@ -33,6 +38,8 @@ const ThemeToggle = ({ isHidden = true }) => {
         document.documentElement.classList.toggle('dark', newTheme);
         // Don't add user-theme class when using system preference
         document.documentElement.classList.remove('user-theme');
+        // Update manifest theme colors
+        updateManifestTheme(newTheme);
       }
     };
     
@@ -47,6 +54,8 @@ const ThemeToggle = ({ isHidden = true }) => {
     document.documentElement.classList.toggle('dark', newTheme);
     // Add user-theme class when user manually toggles theme
     document.documentElement.classList.add('user-theme');
+    // Update manifest theme colors
+    updateManifestTheme(newTheme);
   };
 
   return (

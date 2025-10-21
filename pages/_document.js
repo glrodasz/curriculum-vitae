@@ -9,6 +9,8 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Lato&display=swap"
         />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#FFFFFF" />
         <Analytics />
       </Head>
       <body>
