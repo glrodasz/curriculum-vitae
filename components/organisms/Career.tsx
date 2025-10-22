@@ -6,13 +6,18 @@ import Job from "../molecules/Job";
 import { calculateDuration } from "../../utils";
 import { careers } from "../../data/careers";
 
-const Career: React.FC = () => {
+interface CareerProps {
+  printMode?: boolean;
+}
+
+const Career: React.FC<CareerProps> = ({ printMode = false }) => {
   return (
     <PageContainer withCarousel>
       <Heading size="md" isCentered>
         <strong>Career</strong> experience
       </Heading>
       <Carousel
+        printMode={printMode}
         items={careers.map((career) => ({
           title: career.date ? career.date : String(new Date().getFullYear()),
           subtitle: career.company,

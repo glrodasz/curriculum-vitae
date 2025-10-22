@@ -5,10 +5,15 @@ import SkillCards from "../molecules/SkillCards";
 import SkillList from "../molecules/SkillList";
 import data from "../../data";
 
-const Skills: React.FC = () => {
+interface SkillsProps {
+  printMode?: boolean;
+}
+
+const Skills: React.FC<SkillsProps> = ({ printMode = false }) => {
   return (
     <PageContainer withCarousel>
       <Carousel
+        printMode={printMode}
         items={[
           {
             title: "Expertise",

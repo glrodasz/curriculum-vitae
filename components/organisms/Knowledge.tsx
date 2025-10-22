@@ -10,9 +10,10 @@ import { KnowledgeSection } from "../../types/data";
 interface KnowledgeProps {
   title: [string, string];
   items: KnowledgeSection[];
+  printMode?: boolean;
 }
 
-const Knowledge: React.FC<KnowledgeProps> = ({ title, items }) => {
+const Knowledge: React.FC<KnowledgeProps> = ({ title, items, printMode = false }) => {
   const { isMobile } = useBreakpoints();
 
   return (
@@ -22,6 +23,7 @@ const Knowledge: React.FC<KnowledgeProps> = ({ title, items }) => {
           <strong>{title[0]}</strong> {title[1]}
         </Heading>
         <Carousel
+          printMode={printMode}
           items={items.map((item) => ({
             title: item.title,
             content: (

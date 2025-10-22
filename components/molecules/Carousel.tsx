@@ -14,9 +14,10 @@ interface CarouselItem {
 
 interface CarouselProps {
   items: CarouselItem[];
+  printMode?: boolean;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items }) => {
+const Carousel: React.FC<CarouselProps> = ({ items, printMode = false }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const carouselNavRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,85 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
     trackTouch: true,
   });
 
+  // Print mode: render all items as a simple vertical stack
+  if (printMode) {
+    return (
+      <>
+        <div className="carousel print-mode">
+          {items.map((item, index) => (
+            <div key={index} className="content print-content">
+              {item.title && <h3 className="print-section-title">{item.title}</h3>}
+              {item.subtitle && <h4 className="print-section-subtitle">{item.subtitle}</h4>}
+              {item.heading && <p className="print-section-heading">{item.heading}</p>}
+              {item.content}
+            </div>
+          ))}
+        </div>
+        <style jsx>{`
+          .carousel.print-mode {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+          }
+
+          .print-content {
+            width: 100%;
+          }
+
+          .print-content > :global(.masonry-container) {
+            display: block;
+          }
+
+          .print-section-title {
+            font-family: "Hind", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text);
+            line-height: 1.2;
+          }
+
+          .print-section-subtitle {
+            font-family: "Hind", sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+            line-height: 1.2;
+          }
+
+          .print-section-heading {
+            font-family: "Hind", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            line-height: 1.4;
+          }
+
+          @media print {
+            .carousel.print-mode {
+              gap: 0;
+            }
+
+            .print-content {
+              break-inside: auto;
+              page-break-inside: auto;
+              margin-bottom: 30px;
+            }
+
+            .print-section-title {
+              break-after: avoid;
+              page-break-after: avoid;
+            }
+          }
+        `}</style>
+      </>
+    );
+  }
+
+  // Normal interactive mode
   return (
     <>
       <div
