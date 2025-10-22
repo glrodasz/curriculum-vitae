@@ -257,27 +257,6 @@
     font-weight: 700 !important;
   }
 
-  /* MUI Masonry - convert to 2-column grid within each section */
-  .print-content .masonry-container {
-    display: block !important;
-    width: 100% !important;
-  }
-
-  .print-content .masonry-container > div {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 15px 20px !important;
-    width: 100% !important;
-  }
-
-  .print-content .masonry-container > div > * {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-    margin: 0 !important;
-    display: block !important;
-    width: 100% !important;
-  }
-
   /* Ensure items within masonry render correctly */
   .print-content .masonry-container .item {
     margin-bottom: 0 !important;
