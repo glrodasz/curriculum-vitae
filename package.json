@@ -6,7 +6,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "lint": "next lint",
     "build": "next build",
     "start": "next start",
