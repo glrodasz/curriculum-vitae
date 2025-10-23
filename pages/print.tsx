@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GetStaticProps } from "next";
 
 import Hero from "../components/organisms/Hero";
 import Profile from "../components/organisms/Profile";
@@ -6,6 +7,7 @@ import Career from "../components/organisms/Career";
 import Footer from "../components/organisms/Footer";
 import Skills from "../components/organisms/Skills";
 import Knowledge from "../components/organisms/Knowledge";
+import { ViewMode } from "../contexts/ViewModeContext";
 import { knowledge } from "../data/knowledge";
 import { achievements } from "../data/achievements";
 
@@ -22,10 +24,10 @@ const Print = () => {
       <div className="container print-container">
         <Hero />
         <Profile />
-        <Skills printMode />
-        <Career printMode />
-        <Knowledge title={["Knowledge", "background"]} items={knowledge} printMode />
-        <Knowledge title={["Volunteer", "experience"]} items={achievements} printMode />
+        <Skills />
+        <Career />
+        <Knowledge title={["Knowledge", "background"]} items={knowledge} />
+        <Knowledge title={["Volunteer", "experience"]} items={achievements} />
         <Footer />
       </div>
       <style jsx>
@@ -45,6 +47,14 @@ const Print = () => {
       </style>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<{ viewMode: ViewMode }> = async () => {
+  return {
+    props: {
+      viewMode: 'flattened',
+    },
+  };
 };
 
 export default Print;

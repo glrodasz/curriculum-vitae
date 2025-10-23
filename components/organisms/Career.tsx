@@ -3,21 +3,20 @@ import PageContainer from "../layout/PageContainer";
 import Heading from "../atoms/Heading";
 import Carousel from "../molecules/Carousel";
 import Job from "../molecules/Job";
+import { useViewMode } from "../../contexts/ViewModeContext";
 import { calculateDuration } from "../../utils";
 import { careers } from "../../data/careers";
 
-interface CareerProps {
-  printMode?: boolean;
-}
+const Career: React.FC = () => {
+  const { isFlattened } = useViewMode();
 
-const Career: React.FC<CareerProps> = ({ printMode = false }) => {
   return (
     <PageContainer withCarousel>
-      <Heading size="md" isCentered>
+      <Heading size="md" isCentered={!isFlattened}>
         <strong>Career</strong> experience
       </Heading>
       <Carousel
-        printMode={printMode}
+        isFlattened={isFlattened}
         items={careers.map((career) => ({
           title: career.date ? career.date : String(new Date().getFullYear()),
           subtitle: career.company,

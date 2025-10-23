@@ -3,17 +3,16 @@ import PageContainer from "../layout/PageContainer";
 import Carousel from "../molecules/Carousel";
 import SkillCards from "../molecules/SkillCards";
 import SkillList from "../molecules/SkillList";
+import { useViewMode } from "../../contexts/ViewModeContext";
 import data from "../../data";
 
-interface SkillsProps {
-  printMode?: boolean;
-}
+const Skills: React.FC = () => {
+  const { isFlattened } = useViewMode();
 
-const Skills: React.FC<SkillsProps> = ({ printMode = false }) => {
   return (
     <PageContainer withCarousel>
       <Carousel
-        printMode={printMode}
+        isFlattened={isFlattened}
         items={[
           {
             title: "Expertise",
