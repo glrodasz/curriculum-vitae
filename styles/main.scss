@@ -243,22 +243,8 @@
     grid-template-columns: 1fr !important;
   }
 
-  /* Knowledge/Volunteer sections - each subsection as separate block */
-  .print-content {
-    margin-bottom: 35px !important;
-    padding-bottom: 10px !important;
-    border-bottom: 1px solid transparent !important;
-  }
-
-  .print-section-title {
-    margin-bottom: 15px !important;
-    break-after: avoid !important;
-    page-break-after: avoid !important;
-    font-weight: 700 !important;
-  }
-
   /* Ensure items within masonry render correctly */
-  .print-content .masonry-container .item {
+  .masonry-container .item {
     margin-bottom: 0 !important;
   }
 
@@ -304,17 +290,6 @@
     object-fit: contain !important;
   }
 
-  /* Print content spacing */
-  .print-content {
-    margin-bottom: 30px !important;
-  }
-
-  /* Print section titles */
-  .print-section-title {
-    break-after: avoid !important;
-    page-break-after: avoid !important;
-  }
-
   /* Ensure proper widths for print */
   .cards .card {
     flex: 1 1 30% !important;
@@ -325,53 +300,5 @@
   footer {
     break-before: page;
     page-break-before: always;
-  }
-
-  /* ============================================
-     PAGE BREAK UTILITIES
-     Use these classes to control page breaks
-     ============================================ */
-
-  /* Avoid breaking inside an element */
-  .avoid-break,
-  .no-break {
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
-  /* Force page break before an element */
-  .break-before {
-    break-before: page !important;
-    page-break-before: always !important;
-  }
-
-  /* Force page break after an element */
-  .break-after {
-    break-after: page !important;
-    page-break-after: always !important;
-  }
-
-  /* Avoid page break before an element */
-  .avoid-break-before {
-    break-before: avoid !important;
-    page-break-before: avoid !important;
-  }
-
-  /* Avoid page break after an element */
-  .avoid-break-after {
-    break-after: avoid !important;
-    page-break-after: avoid !important;
-  }
-
-  /* Keep element with next element (avoid orphans) */
-  .keep-with-next {
-    break-after: avoid !important;
-    page-break-after: avoid !important;
-  }
-
-  /* Keep element with previous element (avoid widows) */
-  .keep-with-previous {
-    break-before: avoid !important;
-    page-break-before: avoid !important;
   }
 }
