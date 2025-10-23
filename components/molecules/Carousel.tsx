@@ -4,6 +4,8 @@ import { useSwipeable } from "react-swipeable";
 
 import CarouselHeader from "./CarouselHeader";
 import CarouselSubheader from "./CarouselSubheader";
+import Heading from "../atoms/Heading";
+import Paragraph from "../atoms/Paragraph";
 
 interface CarouselItem {
   title: string;
@@ -56,9 +58,21 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
         <div className="carousel flattened">
           {items.map((item, index) => (
             <div key={index} className="content flattened-content">
-              {item.title && <h3 className="flattened-section-title">{item.title}</h3>}
-              {item.subtitle && <h4 className="flattened-section-subtitle">{item.subtitle}</h4>}
-              {item.heading && <p className="flattened-section-heading">{item.heading}</p>}
+              {item.title && (
+                <Heading tag="h3" size="sm" weight="bold" isMarginless>
+                  {item.title}
+                </Heading>
+              )}
+              {item.subtitle && (
+                <Heading tag="h4" size="xs" weight="bold" isMarginless>
+                  {item.subtitle}
+                </Heading>
+              )}
+              {item.heading && (
+                <Paragraph color="secondary" isMarginless>
+                  {item.heading}
+                </Paragraph>
+              )}
               {item.content}
             </div>
           ))}
@@ -79,31 +93,16 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
             display: block;
           }
 
-          .flattened-section-title {
-            font-family: "Hind", sans-serif;
-            font-size: 24px;
-            font-weight: 700;
+          .flattened-content > :global(.heading:first-child) {
             margin-bottom: 10px;
-            color: var(--text);
-            line-height: 1.2;
           }
 
-          .flattened-section-subtitle {
-            font-family: "Hind", sans-serif;
-            font-size: 20px;
-            font-weight: 700;
+          .flattened-content > :global(.heading:nth-child(2)) {
             margin-bottom: 8px;
-            color: var(--text);
-            line-height: 1.2;
           }
 
-          .flattened-section-heading {
-            font-family: "Hind", sans-serif;
-            font-size: 16px;
-            font-weight: 400;
+          .flattened-content > :global(.paragraph) {
             margin-bottom: 20px;
-            color: var(--secondary);
-            line-height: 1.4;
           }
         `}</style>
       </>
