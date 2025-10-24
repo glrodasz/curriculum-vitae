@@ -104,6 +104,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           .flattened-content > :global(.paragraph) {
             margin-bottom: 20px;
           }
+
+          .flattened-content > :global(.paragraph.color-secondary) {
+            color: var(--text);
+          }
         `}</style>
       </>
     );
