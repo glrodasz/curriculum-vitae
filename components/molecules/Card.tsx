@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, items, isInverted }) => {
     <>
       <div
         className={classNames("card", {
-          "is-inverted": isInverted,
+          "card--inverted": isInverted,
         })}
       >
         <header>
@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({ title, subtitle, items, isInverted }) => {
             background: "var(--white)",
           }}
         />
-        <div className="items">
+        <div className="card-items">
         {items.map((item) => (
           <Paragraph key={item} size="sm" color="secondary" isMarginless>{item}.</Paragraph>
         ))}
@@ -44,26 +44,35 @@ const Card: React.FC<CardProps> = ({ title, subtitle, items, isInverted }) => {
           width: 100%;
         }
 
-        .items {
+        .card-items {
           display: flex;
           flex-direction: column;
           gap: 10px;
         }
 
-        .is-inverted {
+        .card--inverted {
           background: var(--black);
         }
 
-        .is-inverted header :global(.heading) {
+        .card--inverted header :global(.heading) {
           color: var(--golden-yellow);
         }
 
-        .is-inverted header :global(.paragraph) {
+        .card--inverted header :global(.paragraph) {
           color: var(--golden-yellow);
         }
 
-        .is-inverted :global(.paragraph) {
+        .card--inverted :global(.paragraph) {
           color: var(--white);
+        }
+
+        @media print {
+          .card {
+            width: 100% !important;
+            max-width: 100% !important;
+            break-inside: avoid !important;
+            page-break-inside: avoid !important;
+          }
         }
       `}</style>
     </>

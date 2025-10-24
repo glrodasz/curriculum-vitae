@@ -137,16 +137,6 @@
     display: none;
   }
 
-  /* Hide interactive elements */
-  .theme-toggle-container {
-    display: none !important;
-  }
-
-  /* Carousel-specific print adjustments */
-  .carousel-nav {
-    display: none !important;
-  }
-
   /* Ensure images print correctly */
   img {
     max-width: 100% !important;
@@ -155,25 +145,10 @@
     break-inside: avoid;
   }
 
-  /* Remove only sticky/fixed positioning - preserve relative, absolute, flex, grid */
-  .carousel-nav {
-    position: relative !important;
-  }
-
   /* Preserve layout systems */
-  .cards,
-  .job,
-  .masonry-container,
   [style*="display: flex"],
   [style*="display: grid"] {
     display: inherit !important;
-  }
-
-  /* Ensure flexbox layouts work in print */
-  .cards {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
   }
 
   /* Section headings - left align for print */
@@ -181,89 +156,9 @@
     text-align: left !important;
   }
 
-  /* Ensure grid layouts work in print - Career 2 column layout */
-  .job {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 35px !important;
-    grid-template-areas:
-      "header achievements"
-      "about achievements"
-      "functions achievements" !important;
-  }
-
-  .job .header {
-    grid-area: header !important;
-    align-items: flex-start !important;
-  }
-
-  /* Company logo sizing in print */
-  .job .header .logo {
-    max-width: 200px !important;
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  /* URL left alignment */
-  .job .header a {
-    text-align: left !important;
-    align-self: flex-start !important;
-  }
-
-  .job > div:nth-child(2) {
-    grid-area: about !important;
-  }
-
-  .job > div:nth-child(3) {
-    grid-area: functions !important;
-  }
-
-  .job .achievements {
-    grid-area: achievements !important;
-    grid-column: 2 !important;
-    grid-row: 1 / 5 !important;
-  }
-
-  .job .achievements .list {
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* SkillList grid layout - 2 columns for skills/frameworks */
-  .print-content .list {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 20px !important;
-  }
-
-  /* Override for achievements list - single column */
-  .job .achievements .list {
-    display: flex !important;
-    flex-direction: column !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Ensure items within masonry render correctly */
-  .masonry-container .item {
-    margin-bottom: 0 !important;
-  }
-
-  /* Card sizing for print */
-  .card {
-    width: 100% !important;
-    max-width: 100% !important;
-    break-inside: avoid !important;
-    page-break-inside: avoid !important;
-  }
-
   /* Links - remove underlines */
   a {
     text-decoration: none;
-  }
-
-  /* Optimize spacing for print */
-  .container {
-    gap: 30px !important;
   }
 
   /* Ensure proper contrast for print */
@@ -277,28 +172,4 @@
     height: auto;
   }
 
-  /* Remove shadows and effects that may not print well */
-  header {
-    box-shadow: none !important;
-    min-height: auto !important;
-  }
-
-  /* Hero photo sizing for print */
-  header .photo {
-    max-width: 400px !important;
-    max-height: 400px !important;
-    object-fit: contain !important;
-  }
-
-  /* Ensure proper widths for print */
-  .cards .card {
-    flex: 1 1 30% !important;
-    min-width: 200px !important;
-  }
-
-  /* Footer adjustments for print */
-  footer {
-    break-before: page;
-    page-break-before: always;
-  }
 }
