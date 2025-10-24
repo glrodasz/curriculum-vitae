@@ -4,6 +4,8 @@ import { useSwipeable } from "react-swipeable";
 
 import CarouselHeader from "./CarouselHeader";
 import CarouselSubheader from "./CarouselSubheader";
+import Heading from "../atoms/Heading";
+import Paragraph from "../atoms/Paragraph";
 
 interface CarouselItem {
   title: string;
@@ -14,9 +16,10 @@ interface CarouselItem {
 
 interface CarouselProps {
   items: CarouselItem[];
+  isFlattened?: boolean;
 }
 
-const Carousel: React.FC<CarouselProps> = ({ items }) => {
+const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const carouselNavRef = useRef<HTMLDivElement>(null);
@@ -48,6 +51,65 @@ const Carousel: React.FC<CarouselProps> = ({ items }) => {
     trackTouch: true,
   });
 
+  // Flattened mode: render all items as a simple vertical stack
+  if (isFlattened) {
+    return (
+      <>
+        <div className="carousel flattened">
+          {items.map((item, index) => (
+            <div key={index} className="content flattened-content">
+              {item.title && (
+                <Heading tag="h3" size="sm" weight="bold" isMarginless>
+                  {item.title}
+                </Heading>
+              )}
+              {item.subtitle && (
+                <Heading tag="h4" size="xs" weight="bold" isMarginless>
+                  {item.subtitle}
+                </Heading>
+              )}
+              {item.heading && (
+                <Paragraph color="secondary" isMarginless>
+                  {item.heading}
+                </Paragraph>
+              )}
+              {item.content}
+            </div>
+          ))}
+        </div>
+        <style jsx>{`
+          .carousel.flattened {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+          }
+
+          .flattened-content {
+            width: 100%;
+          }
+
+          .flattened-content > :global(.masonry-container) {
+            display: block;
+          }
+
+          .flattened-content > :global(.heading:first-child) {
+            margin-bottom: 10px;
+          }
+
+          .flattened-content > :global(.heading:nth-child(2)) {
+            margin-bottom: 8px;
+          }
+
+          .flattened-content > :global(.paragraph) {
+            margin-bottom: 20px;
+          }
+        `}</style>
+      </>
+    );
+  }
+
+  // Normal interactive mode
   return (
     <>
       <div

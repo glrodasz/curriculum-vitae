@@ -2,10 +2,15 @@ import "minireset.css/minireset.css";
 import '../styles/main.scss'
 import useFooterVisibility from '../hooks/useFooterVisibility'
 import { initializeManifestTheme } from '../utils/manifest'
+import { ViewModeProvider, ViewMode } from '../contexts/ViewModeContext'
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 
-function App({ Component, pageProps }: AppProps) {
+interface CustomPageProps {
+  viewMode?: ViewMode;
+}
+
+function App({ Component, pageProps }: AppProps<CustomPageProps>) {
   useFooterVisibility();
 
   useEffect(() => {
@@ -13,7 +18,13 @@ function App({ Component, pageProps }: AppProps) {
     initializeManifestTheme();
   }, []);
 
-  return <Component {...pageProps} />;
+  const viewMode = pageProps.viewMode ?? 'normal';
+
+  return (
+    <ViewModeProvider mode={viewMode}>
+      <Component {...pageProps} />
+    </ViewModeProvider>
+  );
 }
 
 export default App;

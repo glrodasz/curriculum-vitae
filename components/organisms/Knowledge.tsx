@@ -5,6 +5,7 @@ import Carousel from "../molecules/Carousel";
 import Item from "../molecules/Item";
 import Masonry from "@mui/lab/Masonry";
 import useBreakpoints from "../../hooks/useBreakpoints";
+import { useViewMode } from "../../contexts/ViewModeContext";
 import { KnowledgeSection } from "../../types/data";
 
 interface KnowledgeProps {
@@ -14,14 +15,16 @@ interface KnowledgeProps {
 
 const Knowledge: React.FC<KnowledgeProps> = ({ title, items }) => {
   const { isMobile } = useBreakpoints();
+  const { isFlattened } = useViewMode();
 
   return (
     <>
       <PageContainer withCarousel>
-        <Heading size="md" isCentered>
+        <Heading size="md" isCentered={!isFlattened}>
           <strong>{title[0]}</strong> {title[1]}
         </Heading>
         <Carousel
+          isFlattened={isFlattened}
           items={items.map((item) => ({
             title: item.title,
             content: (

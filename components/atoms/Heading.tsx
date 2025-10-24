@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 interface HeadingProps {
   children: ReactNode;
+  tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size?: "xxs" | "xs" | "sm" | "md" | "lg";
   color?: "primary" | "secondary" | "disabled";
   weight?: "normal" | "bold";
@@ -16,6 +17,7 @@ interface HeadingProps {
 
 const Heading = ({
   children,
+  tag = "h1",
   size = "lg",
   color = "primary",
   weight = "bold",
@@ -26,9 +28,11 @@ const Heading = ({
   isInline,
   freezeColor = false,
 }: HeadingProps) => {
+  const Tag = tag;
+
   return (
     <>
-      <h1
+      <Tag
         className={classNames("heading", `size-${size} color-${color} weight-${weight}`, {
           "is-centered": isCentered,
           "is-marginless": isMarginless,
@@ -39,7 +43,7 @@ const Heading = ({
         })}
       >
         {children}
-      </h1>
+      </Tag>
       <style jsx>{`
         .heading {
           font-family: "Hind", sans-serif;
