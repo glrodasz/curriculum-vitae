@@ -109,6 +109,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
             .carousel-container--flattened {
               gap: 30px;
             }
+
+            .carousel-slide--flattened > :global(.paragraph.color-secondary) {
+              color: var(--text);
+            }
           }
         `}</style>
       </>
