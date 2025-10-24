@@ -28,7 +28,7 @@ const Knowledge: React.FC<KnowledgeProps> = ({ title, items }) => {
           items={items.map((item) => ({
             title: item.title,
             content: (
-              <div className="masonry-container">
+              <div className="knowledge-masonry">
                 <Masonry columns={isMobile ? 1 : 2}>
                   {item.items.map((subitem) => (
                     <Item key={subitem.title} icon="diamond-alt" {...subitem} />
@@ -39,6 +39,21 @@ const Knowledge: React.FC<KnowledgeProps> = ({ title, items }) => {
           }))}
         />
       </PageContainer>
+      <style jsx>{`
+        .knowledge-masonry {
+          display: block;
+        }
+
+        @media print {
+          .knowledge-masonry {
+            display: block !important;
+          }
+
+          .knowledge-masonry :global(.item) {
+            margin-bottom: 0 !important;
+          }
+        }
+      `}</style>
     </>
   );
 };

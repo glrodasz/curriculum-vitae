@@ -15,7 +15,7 @@ const Job: React.FC<JobProps> = ({ career }) => {
   return (
     <>
       <div className="job">
-        <div className="header">
+        <div className="job-header">
           <Logo logoName={career.logo} shouldInvert={true} />
           <Link href={`https://${career.url}`} weight="normal">{career.url}</Link>
         </div>
@@ -29,9 +29,9 @@ const Job: React.FC<JobProps> = ({ career }) => {
           <Paragraph>{career.functions}</Paragraph>
         </div>
 
-        {!!career.achievements?.length && <div className="achievements">
+        {!!career.achievements?.length && <div className="job-achievements">
           <Heading size="xs">My achievements</Heading>
-          <div className="list">
+          <div className="job-achievements-list">
             {career.achievements.map((achievement, index) => (
               <Item key={index} icon="diamond-alt" text={achievement} />
             ))}
@@ -46,13 +46,13 @@ const Job: React.FC<JobProps> = ({ career }) => {
           gap: 25px;
         }
 
-        .achievements {
+        .job-achievements {
           display: flex;
           flex-direction: column;
           gap: 10px;
         }
 
-        .header {
+        .job-header {
           display: flex;
           flex-direction: column;
           gap: 15px;
@@ -66,17 +66,65 @@ const Job: React.FC<JobProps> = ({ career }) => {
             gap: 35px;
           }
 
-          .achievements {
+          .job-achievements {
             grid-column: 2;
             grid-row: 1/5;
           }
 
-          .achievements > :global(.heading) {
+          .job-achievements > :global(.heading) {
             margin-left: 25px;
           }
 
-          .header {
+          .job-header {
             align-items: flex-start;
+          }
+        }
+
+        @media print {
+          .job {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 35px !important;
+            grid-template-areas:
+              "header achievements"
+              "about achievements"
+              "functions achievements" !important;
+          }
+
+          .job-header {
+            grid-area: header !important;
+            align-items: flex-start !important;
+          }
+
+          .job-header :global(.logo) {
+            max-width: 200px !important;
+            width: 100% !important;
+            height: auto !important;
+          }
+
+          .job-header :global(a) {
+            text-align: left !important;
+            align-self: flex-start !important;
+          }
+
+          .job > div:nth-child(2) {
+            grid-area: about !important;
+          }
+
+          .job > div:nth-child(3) {
+            grid-area: functions !important;
+          }
+
+          .job-achievements {
+            grid-area: achievements !important;
+            grid-column: 2 !important;
+            grid-row: 1 / 5 !important;
+          }
+
+          .job-achievements-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 15px;
           }
         }
       `}</style>

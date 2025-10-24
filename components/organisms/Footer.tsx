@@ -10,37 +10,37 @@ const Footer: React.FC = () => {
     <>
       <footer>
         <PageContainer>
-          <div className="container">
-            <img className="logo" src={`/vectors/footer.svg`}></img>
+          <div className="footer-container">
+            <img className="footer-logo" src={`/vectors/footer.svg`} alt="" />
 
-            <div className="footer">
+            <div className="footer-content">
               <Heading>
                 <strong>Say Hello!</strong>
               </Heading>
               <Paragraph isInverted>
                 It would be a pleasure to meet you!
               </Paragraph>
-              <div className="icon-list">
-                <div className="item">
+              <div className="footer-icon-list">
+                <div className="footer-icon-item">
                   <Icon name="email" />
                   <Link href="mailto:me@guillermorodas.com" isInverted>
                     me(at)guillermorodas.com
                   </Link>
                 </div>
-                <div className="item">
+                <div className="footer-icon-item">
                   <Icon name="link" />
                   <Link href="https://guillermorodas.com" isInverted>
                     guillermorodas.com
                   </Link>
                 </div>
-                <div className="item">
+                <div className="footer-icon-item">
                   <Icon name="bubble" />
                   <Link href="https://undefined.sh" isInverted>
                     undefined.sh
                   </Link>
                 </div>
               </div>
-              <div className="social-networks">
+              <div className="footer-social">
                 <Heading size="xxs" isInverted isMarginless>
                   @rodasdev
                 </Heading>
@@ -70,68 +70,75 @@ const Footer: React.FC = () => {
           background: var(--black);
         }
 
-        .container {
+        .footer-container {
           display: flex;
           flex-direction: column-reverse;
           justify-content: center;
         }
 
-        .logo {
+        .footer-logo {
           display: none;
         }
 
-        .footer {
+        .footer-content {
           display: flex;
           flex-direction: column;
           align-items: center;
           padding-bottom: 50px;
         }
 
-        .icon-list {
+        .footer-icon-list {
           display: flex;
           flex-direction: column;
           margin: 10px 0 30px;
           gap: 15px;
         }
 
-        .item {
+        .footer-icon-item {
           display: flex;
           align-items: center;
         }
 
-        .item > :global(div) {
+        .footer-icon-item > :global(div) {
           margin-right: 10px;
         }
 
-        .social-networks {
+        .footer-social {
           display: flex;
           justify-content: space-around;
           align-items: center;
         }
 
         @media (min-width: 1140px) {
-          .container {
+          .footer-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: 1fr;
             gap: 100px;
           }
 
-          .footer {
+          .footer-content {
             align-items: flex-start;
             grid-column: 2/3;
             padding-bottom: 0;
           }
 
-          .social-networks {
+          .footer-social {
             margin-bottom: 30px;
           }
 
-          .logo {
+          .footer-logo {
             display: block;
             height: 100%;
             object-fit: contain;
             object-position: center 150px;
+          }
+        }
+
+        @media print {
+          footer {
+            break-before: page;
+            page-break-before: always;
           }
         }
       `}</style>
