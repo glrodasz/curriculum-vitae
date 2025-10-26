@@ -55,12 +55,12 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
   if (isFlattened) {
     return (
       <>
-        <div className="carousel flattened">
-          {items.map((item, index) => (
-            <div key={index} className="content flattened-content">
-              {item.title && (
-                <Heading tag="h3" size="sm" weight="bold" isMarginless>
-                  {item.title}
+      <div className="carousel-container carousel-container--flattened">
+        {items.map((item, index) => (
+          <div key={index} className="carousel-slide carousel-slide--flattened">
+            {item.title && (
+              <Heading tag="h3" size="sm" weight="bold" isMarginless>
+                {item.title}
                 </Heading>
               )}
               {item.subtitle && (
@@ -78,35 +78,41 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           ))}
         </div>
         <style jsx>{`
-          .carousel.flattened {
+          .carousel-container--flattened {
             display: flex;
             flex-direction: column;
             gap: 40px;
             width: 100%;
           }
 
-          .flattened-content {
+          .carousel-slide--flattened {
             width: 100%;
           }
 
-          .flattened-content > :global(.masonry-container) {
+          .carousel-slide--flattened > :global(.knowledge-masonry) {
             display: block;
           }
 
-          .flattened-content > :global(.heading:first-child) {
+          .carousel-slide--flattened > :global(.heading:first-child) {
             margin-bottom: 10px;
           }
 
-          .flattened-content > :global(.heading:nth-child(2)) {
+          .carousel-slide--flattened > :global(.heading:nth-child(2)) {
             margin-bottom: 8px;
           }
 
-          .flattened-content > :global(.paragraph) {
+          .carousel-slide--flattened > :global(.paragraph) {
             margin-bottom: 20px;
           }
 
-          .flattened-content > :global(.paragraph.color-secondary) {
+          .carousel-slide--flattened > :global(.paragraph.color-secondary) {
             color: var(--text);
+          }
+
+          @media print {
+            .carousel-container--flattened {
+              gap: 30px;
+            }
           }
         `}</style>
       </>
@@ -118,9 +124,9 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
     <>
       <div
         {...swipeHandlers}
-        className="carousel"
+        className="carousel-container"
       >
-        <div className="carousel-nav" ref={carouselNavRef}>
+        <div className="carousel-navigation" ref={carouselNavRef}>
           <CarouselHeader
             items={items}
             setActiveIndex={setActiveIndex}
@@ -140,8 +146,8 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
             <div
               ref={isActive ? contentRef : null}
               key={index}
-              className={classNames("content", {
-                "is-active": isActive,
+              className={classNames("carousel-slide", {
+                "carousel-slide--active": isActive,
               })}
             >
               {item.content}
@@ -149,8 +155,8 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           );
         })}
       </div>
-      <style jsx>{`
-        .carousel {
+        <style jsx>{`
+        .carousel-container {
           display: flex;
           flex-direction: column;
           margin-top: 20px;
@@ -159,7 +165,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           min-height: 100%;
         }
 
-        .carousel-nav {
+        .carousel-navigation {
           display: flex;
           flex-direction: column;
           position: sticky;
@@ -171,17 +177,17 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           z-index: 20;
         }
 
-        .content {
+        .carousel-slide {
           height: 0;
           opacity: 0;
           scroll-margin-top: ${carouselNavRef.current?.offsetHeight ?? 0}px;
         }
 
-        .content > :global(.masonry-container) {
+        .carousel-slide > :global(.knowledge-masonry) {
           display: none;
         }
 
-        .content.is-active {
+        .carousel-slide--active {
           padding: 35px 20px 0;
           height: auto;
           opacity: 1;
@@ -189,17 +195,38 @@ const Carousel: React.FC<CarouselProps> = ({ items, isFlattened = false }) => {
           z-index: 10;
         }
 
-        .content.is-active > :global(.masonry-container) {
+        .carousel-slide--active > :global(.knowledge-masonry) {
           display: block;
         }
 
         @media (min-width: 768px) {
-          .carousel-nav {
+          .carousel-navigation {
             position: relative;
           }
 
-          .content {
+          .carousel-slide {
             padding: 0;
+          }
+        }
+
+        @media print {
+          .carousel-navigation {
+            display: none !important;
+            position: relative !important;
+          }
+
+          .carousel-slide {
+            height: auto !important;
+            opacity: 1 !important;
+            padding: 0 !important;
+          }
+
+          .carousel-slide > :global(.knowledge-masonry) {
+            display: block !important;
+          }
+
+          .carousel-container {
+            gap: 30px;
           }
         }
       `}</style>

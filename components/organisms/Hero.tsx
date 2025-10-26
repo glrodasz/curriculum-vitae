@@ -15,14 +15,14 @@ const Hero: React.FC = () => {
     <>
       <header>
         <PageContainer fullHeight>
-          <div className="container">
-            <div className="wrapper">
-              <div className="text">
-                <div className="logo">
+          <div className="hero-layout">
+            <div className="hero-content-wrapper">
+              <div className="hero-text">
+                <div className="hero-logo">
                   <Logo shouldInvert="-light" />
                 </div>
                 <Heading size="sm">Hello,</Heading>
-                <div className="fullname">
+                <div className="hero-fullname">
                   <Heading>
                     I&apos;m <strong>Guillermo</strong>
                   </Heading>
@@ -32,14 +32,14 @@ const Hero: React.FC = () => {
                   I help developers to improve their skills while creating
                   quality products.
                 </Paragraph>
-                <div className="relocation-container">
+                <div className="hero-relocation">
                   <Relocation />
                 </div>
               </div>
             </div>
-            <div className="photo-container">
+            <div className="hero-photo-container">
               <Image
-                className="photo"
+                className="hero-photo"
                 src="/images/guillermo-rodas.png"
                 alt="Guillermo Rodas"
                 width={800}
@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
                 priority
               />
             </div>
-            <div className="theme-toggle-container">
+            <div className="hero-theme-toggle">
               <ThemeToggle isHidden={isMobile} />
             </div>
           </div>
@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
           box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .container {
+        .hero-layout {
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -73,34 +73,34 @@ const Hero: React.FC = () => {
           align-items: center;
         }
 
-        .wrapper {
+        .hero-content-wrapper {
           width: 100%;
         }
 
-        .text {
+        .hero-text {
           display: flex;
           flex-direction: column;
           -webkit-text-stroke: 3px var(--text-inverted);
           paint-order: stroke fill;
         }
 
-        .text :global(.freeze-mode) {
+        .hero-text :global(.freeze-mode) {
           -webkit-text-stroke: 3px var(--text-inverted) !important;
         }
 
-        .logo {
+        .hero-logo {
           display: flex;
           justify-content: center;
           margin: 20px auto;
         }
 
-        .photo-container {
+        .hero-photo-container {
           width: 100%;
           display: flex;
           justify-content: center;
         }
 
-        .photo {
+        .hero-photo {
           --photo-mobile-max-width: 800px;
 
           display: block;
@@ -110,14 +110,14 @@ const Hero: React.FC = () => {
           max-width: var(--photo-mobile-max-width);
         }
 
-        .relocation-container {
+        .hero-relocation {
           position: absolute;
           bottom: calc(var(--relocation-height) * -1);
           left: 0;
           right: 0;
         }
 
-        .theme-toggle-container {
+        .hero-theme-toggle {
           position: absolute;
           top: 70px;
           right: 5%;
@@ -139,16 +139,16 @@ const Hero: React.FC = () => {
             margin-bottom: 0;
           }
 
-          .text {
+          .hero-text {
             align-items: flex-start;
           }
 
-          .container {
+          .hero-layout {
             flex-direction: row;
             justify-content: center;
           }
 
-          .photo {
+          .hero-photo {
             --photo-desktop-min-width: 500px;
 
             max-height: 100%;
@@ -158,24 +158,45 @@ const Hero: React.FC = () => {
             margin-top: 100px;
           }
 
-          .logo {
+          .hero-logo {
             position: absolute;
             top: 30px;
           }
 
-          .fullname {
+          .hero-fullname {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
           }
 
-          .fullname strong {
+          .hero-fullname strong {
             -webkit-text-stroke: 3px var(--black);
           }
 
-          .relocation-container {
+          .hero-relocation {
             position: relative;
             bottom: 0;
+          }
+        }
+
+        @media print {
+          header {
+            box-shadow: none !important;
+            min-height: auto !important;
+          }
+
+          .hero-theme-toggle {
+            display: none !important;
+          }
+
+          .hero-layout {
+            gap: 30px;
+          }
+
+          .hero-photo {
+            max-width: 400px !important;
+            max-height: 400px !important;
+            object-fit: contain !important;
           }
         }
       `}</style>
