@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
                   <Link href="https://twitch.tv/guillermorodas" isInline>
                     <Icon name="twitch" hasBackground />
                   </Link>
-                  <Link href="https://twitter.com/rodasdev" isInline>
-                    <Icon name="twitter" hasBackground />
+                  <Link href="https://x.com/rodasdev" isInline>
+                    <Icon name="x" hasBackground />
                   </Link>
                   <Link href="https://instagram.com/rodasdev" isInline>
                     <Icon name="instagram" hasBackground />
